@@ -1,8 +1,6 @@
 package ink.ikx.rt.api.internal.file;
 
-import crafttweaker.api.block.IBlock;
 import crafttweaker.api.item.IIngredient;
-import crafttweaker.api.item.IItemStack;
 import org.apache.commons.lang3.StringUtils;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;

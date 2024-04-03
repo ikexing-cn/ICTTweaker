@@ -64,11 +64,14 @@ public abstract class IBook {
 
         @Override
         public boolean validate() {
-            return !Main.HIDDEN_MATERIAL_LIST.contains(this.material);
+            return RTConfig.Tconstruct.iconModification && !Main.HIDDEN_MATERIAL_LIST.contains(this.material);
         }
 
         @Override
         public String describeInvalid() {
+            if (!RTConfig.Tconstruct.iconModification) {
+                return "Change \"iconModification\" to true in the configuration file";
+            }
             return "Material " + this.material + " is already exists in hidden materials";
         }
     }
@@ -95,11 +98,14 @@ public abstract class IBook {
 
         @Override
         public boolean validate() {
-            return !Main.MATERIAL_SHOW_ITEM_MAP.containsKey(this.material);
+            return RTConfig.Tconstruct.iconModification && !Main.MATERIAL_SHOW_ITEM_MAP.containsKey(this.material);
         }
 
         @Override
         public String describeInvalid() {
+            if (!RTConfig.Tconstruct.iconModification) {
+                return "Change \"iconModification\" to true in the configuration file";
+            }
             return "Material " + this.material + " is already changed";
         }
     }
@@ -126,11 +132,14 @@ public abstract class IBook {
 
         @Override
         public boolean validate() {
-            return !Main.MATERIAL_PRIORITY_MAP.containsKey(this.material);
+            return RTConfig.Tconstruct.iconModification && !Main.MATERIAL_PRIORITY_MAP.containsKey(this.material);
         }
 
         @Override
         public String describeInvalid() {
+            if (!RTConfig.Tconstruct.iconModification) {
+                return "Change \"iconModification\" to true in the configuration file";
+            }
             return "Material " + this.material + " is already set priority";
         }
     }

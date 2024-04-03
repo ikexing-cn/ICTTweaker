@@ -5,18 +5,19 @@ import crafttweaker.api.event.IEventHandle;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.util.EventList;
 import crafttweaker.util.IEventHandler;
-
 import ink.ikx.rt.impl.vanilla.ItemAttributeModificationEvent;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethod;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 /**
  * @author youyihj
  */
 
+@SidedZenRegister
 @ZenExpansion("crafttweaker.events.IEventManager")
 public class CTEventHandler {
     public static final EventList<IItemAttributeModificationEvent> elAttributeModification = new EventList<>();

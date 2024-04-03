@@ -10,11 +10,13 @@ import ink.ikx.rt.impl.internal.config.RTConfig;
 import stanhebben.zenscript.annotations.Optional;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethod;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 /**
  * @author youyihj
  */
 
+@SidedZenRegister
 @ZenExpansion("crafttweaker.item.IIngredient")
 public class AttributeModificationListeners {
     @ZenMethod
