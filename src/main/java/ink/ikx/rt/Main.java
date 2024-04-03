@@ -72,7 +72,7 @@ public class Main {
     public static final String DESPENDENCIES = "required-after:crafttweaker;" +
             "required-after:mixinbooter@[4.2,);" +
             "required-after:zenutils@[1.17,);" +
-            "required-after:configanytime" +
+            "required-after:configanytime@[2.0,);" +
             "after:contenttweaker;after:thaumcraft";
 
     public static final Set<IJeiPanel> JEI_PANEL_SET = new HashSet<>();
