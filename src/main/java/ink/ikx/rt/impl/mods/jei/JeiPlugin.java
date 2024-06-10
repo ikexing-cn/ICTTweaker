@@ -10,11 +10,14 @@ import ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper;
 import mezz.jei.Internal;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
+import mezz.jei.api.ISubtypeRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import mezz.jei.gui.GuiHelper;
+import net.minecraft.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +26,12 @@ import java.util.stream.Collectors;
 public class JeiPlugin implements IModPlugin {
 
     public static final String DEFAULT_TEXTURE = "randomtweaker:textures/gui/jei/jei_default.png";
+    public static List<Item> subtypesToRegister = new ArrayList<>();
+
+    @Override
+    public void registerItemSubtypes(ISubtypeRegistry subtypeRegistry) {
+        subtypeRegistry.useNbtForSubtypes(subtypesToRegister.toArray(new Item[0]));
+    }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
