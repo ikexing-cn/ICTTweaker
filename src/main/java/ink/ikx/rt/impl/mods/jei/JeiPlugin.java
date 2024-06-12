@@ -1,5 +1,6 @@
 package ink.ikx.rt.impl.mods.jei;
 
+import com.google.common.collect.Lists;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import ink.ikx.rt.Main;
 import ink.ikx.rt.impl.mods.jei.impl.core.MCJeiPanel;
@@ -17,7 +18,6 @@ import mezz.jei.gui.GuiHelper;
 import net.minecraft.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
 @ParametersAreNonnullByDefault
 public class JeiPlugin implements IModPlugin {
 
+    public static List<Item> subtypesToRegister = Lists.newArrayList();
     public static final String DEFAULT_TEXTURE = "randomtweaker:textures/gui/jei/jei_default.png";
-    public static List<Item> subtypesToRegister = new ArrayList<>();
 
     @Override
     public void registerItemSubtypes(ISubtypeRegistry subtypeRegistry) {
