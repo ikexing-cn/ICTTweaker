@@ -6,6 +6,7 @@ import com.google.common.collect.Lists;
 import com.zeitheron.hammercore.utils.OnetimeCaller;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.api.block.IBlockState;
+import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.mc1120.commands.CTChatCommand;
 import crafttweaker.mods.jei.JEI;
@@ -32,6 +33,7 @@ import ink.ikx.rt.impl.mods.jei.JeiAttunements;
 import ink.ikx.rt.impl.mods.jei.JeiHydroangeas;
 import ink.ikx.rt.impl.mods.jei.JeiOrechid;
 import ink.ikx.rt.impl.mods.thaumcraft.DreamJournalEvent;
+import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -68,7 +70,7 @@ public class Main {
 
     public static final String MODID = "randomtweaker";
     public static final String NAME = "RandomTweaker";
-    public static final String VERSION = "1.4.5";
+    public static final String VERSION = "1.4.6";
     public static final String DESPENDENCIES = "required-after:crafttweaker;" +
             "required-after:mixinbooter@[4.2,);" +
             "required-after:zenutils@[1.17,);" +
@@ -81,6 +83,10 @@ public class Main {
     public static final BiMap<String, Pair<String, ISubTileEntityRepresentation>> SUB_TILE_GENERATING_MAP = HashBiMap.create();
 
     public static final List<String> HIDDEN_MATERIAL_LIST = new ArrayList<>();
+    public static final List<Integer> ANVIL_RECIPE_COST_LIST = new ArrayList<>();
+    public static final List<ItemStack> ANVIL_RECIPE_OUT_LIST = new ArrayList<>();
+    public static final List<ItemStack> ANVIL_RECIPE_LEFT_LIST = new ArrayList<>();
+    public static final List<ItemStack> ANVIL_RECIPE_RIGHT_LIST = new ArrayList<>();
     public static final Map<String, Integer> MATERIAL_PRIORITY_MAP = new HashMap<>();
     public static final Map<String, ItemStack> MATERIAL_SHOW_ITEM_MAP = new HashMap<>();
 

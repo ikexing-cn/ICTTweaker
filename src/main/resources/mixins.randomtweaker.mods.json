@@ -12,7 +12,8 @@
     "botania.MixinTileCocoon",
     "botania.MixinTilePool",
     "botania.MixinTileSpecialFlower",
-    "ftbultimine.MixinFTBUltimine"
+    "ftbultimine.MixinFTBUltimine",
+    "jei.MixinAnvilRecipeMaker"
   ],
   "client": [
     "ftbultimine.MixinFTBUltimineClient",
