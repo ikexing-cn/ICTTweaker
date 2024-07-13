@@ -11,6 +11,26 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 public abstract class IBotaniaFXHelper {
 
     @ZenMethod
+    public static void setWispFXDistanceLimit(boolean limit) {
+        Botania.proxy.setWispFXDistanceLimit(limit);
+    }
+
+    @ZenMethod
+    public static void setWispFXDepthTest(boolean depth) {
+        Botania.proxy.setWispFXDepthTest(depth);
+    }
+
+    @ZenMethod
+    public static void setSparkleFXNoClip(boolean noclip) {
+        Botania.proxy.setSparkleFXNoClip(noclip);
+    }
+
+    @ZenMethod
+    public static void setSparkleFXCorrupt(boolean corrupt) {
+        Botania.proxy.setSparkleFXCorrupt(corrupt);
+    }
+
+    @ZenMethod
     public static void sparkleFX(double x, double y, double z, float r, float g, float b, float size, int m) {
         sparkleFX(x, y, z, r, g, b, size, m, false);
     }
