@@ -1,21 +1,21 @@
 {
   "required": false,
   "compatibilityLevel": "JAVA_8",
-  "package": "ink.ikx.rt.mixins",
+  "package": "dev.ikx.rt.mixins",
   "minVersion": "0.8",
   "refmap": "mixins.randomtweaker.refmap.json",
   "mixins": [
-    "botania.MixinBlockCocoon",
-    "botania.MixinBlockSpecialFlower",
-    "botania.MixinBotaniaAPI",
-    "botania.MixinTileAlfPortal",
-    "botania.MixinTileCocoon",
-    "botania.MixinTilePool",
-    "botania.MixinTileSpecialFlower",
-    "ftbultimine.MixinFTBUltimine"
+    "dev.ikx.rt.mixins.botania.MixinBlockCocoon",
+    "dev.ikx.rt.mixins.botania.MixinBlockSpecialFlower",
+    "dev.ikx.rt.mixins.botania.MixinBotaniaAPI",
+    "dev.ikx.rt.mixins.botania.MixinTileAlfPortal",
+    "dev.ikx.rt.mixins.botania.MixinTileCocoon",
+    "dev.ikx.rt.mixins.botania.MixinTilePool",
+    "dev.ikx.rt.mixins.botania.MixinTileSpecialFlower",
+    "dev.ikx.rt.mixins.ftbultimine.MixinFTBUltimine"
   ],
   "client": [
-    "ftbultimine.MixinFTBUltimineClient",
-    "tconstruct.MixinContentMaterial"
+    "dev.ikx.rt.mixins.ftbultimine.MixinFTBUltimineClient",
+    "dev.ikx.rt.mixins.tconstruct.MixinContentMaterial"
   ]
 }
