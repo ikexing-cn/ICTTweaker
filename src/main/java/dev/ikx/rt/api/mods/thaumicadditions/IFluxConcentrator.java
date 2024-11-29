@@ -10,7 +10,7 @@ import stanhebben.zenscript.annotations.ZenMethod;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 
-@de
+@Deprecated
 @SidedZenRegister(modDeps = "thaumadditions")
 @ZenClass(IFluxConcentrator.ZEN_CLASS)
 public abstract class IFluxConcentrator {

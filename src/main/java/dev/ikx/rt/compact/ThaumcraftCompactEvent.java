@@ -5,7 +5,7 @@ import com.zeitheron.hammercore.utils.OnetimeCaller;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.api.block.IBlockState;
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import dev.ikx.rt.api.mods.thaumicadditions.IFluxConcentrator;
+import dev.ikx.rt.api.mods.thaumicadditions.FluxConcentrator;
 import dev.ikx.rt.impl.mods.thaumcraft.DreamJournalEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -41,12 +41,12 @@ public class ThaumcraftCompactEvent implements ICompactEvent {
 
         @Override
         public void onPostInit(FMLPostInitializationEvent event) {
-            if (!IFluxConcentrator.LATE_REMOVES.isEmpty()) OnetimeCaller.of(this::removeRecipeLate).call();
+            if (!FluxConcentrator.LATE_REMOVES.isEmpty()) OnetimeCaller.of(this::removeRecipeLate).call();
         }
 
         @SuppressWarnings({"rawtypes", "unchecked", "CallToPrintStackTrace"})
         private void removeRecipeLate() {
-            for (Map.Entry<IBlockState, Boolean> entry : IFluxConcentrator.LATE_REMOVES.entrySet()) {
+            for (Map.Entry<IBlockState, Boolean> entry : FluxConcentrator.LATE_REMOVES.entrySet()) {
                 Boolean isRemoveAll = entry.getValue();
                 IBlockState lateRemove = entry.getKey();
                 List<net.minecraft.block.state.IBlockState> toRemoveForPassInBlocks = Lists.newArrayList();

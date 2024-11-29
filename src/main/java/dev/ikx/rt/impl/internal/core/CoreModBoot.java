@@ -15,7 +15,7 @@ public class CoreModBoot implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
         return new String[]{
-                "dev.ikx.rt.impl.internal.core.clazz.RandomTweakerClassTransformer"
+                "dev.ikx.rt.impl.internal.clazz.RandomTweakerClassTransformer"
         };
     }
 
