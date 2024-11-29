@@ -10,15 +10,20 @@ import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethod;
 
-
 @SidedZenRegister(modDeps = "naturesaura")
 @ZenExpansion("crafttweaker.world.IWorld")
 @ZenClass("mods.randomtweaker.naturesaura.IWorld")
 public abstract class IWorldExpansionNa {
 
     @ZenMethod
+    @Deprecated
     public static IAuraChunk getAuraChunk(IWorld world, IBlockPos pos) {
         return new MCAuraChunk(world, pos);
+    }
+
+    @ZenMethod
+    public static dev.ikx.rt.api.mods.naturesaura.MCAuraChunk getAuraChunkFromWorld(IWorld world, IBlockPos pos) {
+        return new dev.ikx.rt.api.mods.naturesaura.MCAuraChunk(world, pos);
     }
 
     @ZenMethod

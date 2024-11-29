@@ -1,6 +1,5 @@
 package dev.ikx.rt.api.mods.astralsorcery.event;
 
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
 import crafttweaker.api.entity.IEntity;
 import crafttweaker.api.entity.IEntityItem;
 import crafttweaker.api.event.IEntityEvent;
@@ -9,18 +8,19 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.world.IWorld;
 import dev.ikx.rt.impl.mods.astralsorcery.event.AttunementRecipeCompleteEvent;
-
-import java.util.List;
 import net.minecraft.item.ItemStack;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenGetter;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenSetter;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
+
+import java.util.List;
 
 
 @SidedZenRegister(modDeps = "astralsorcery")
 @ZenClass("mods.randomtweaker.astralsorcery.AttunementRecipeCompleteEvent")
-public abstract class CTAttunementRecipeCompleteEvent implements IEventCancelable, IEntityEvent {
+public class CTAttunementRecipeCompleteEvent implements IEventCancelable, IEntityEvent {
 
     private final AttunementRecipeCompleteEvent event;
 
@@ -67,7 +67,7 @@ public abstract class CTAttunementRecipeCompleteEvent implements IEventCancelabl
 
     @ZenGetter("itemEntity")
     @ZenMethod
-    public IEntityItem getItemEntity(){
+    public IEntityItem getItemEntity() {
         return CraftTweakerMC.getIEntityItem(this.event.getInputEntity());
     }
 

@@ -7,6 +7,7 @@ import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 
 
+@Deprecated
 @SidedZenRegister(modDeps = "naturesaura")
 @ZenClass("mods.randomtweaker.naturesaura.IAuraChunk")
 public interface IAuraChunk {

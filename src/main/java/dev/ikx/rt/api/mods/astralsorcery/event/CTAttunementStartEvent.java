@@ -14,7 +14,7 @@ import stanhebben.zenscript.annotations.ZenMethod;
 
 @SidedZenRegister(modDeps = "astralsorcery")
 @ZenClass("mods.randomtweaker.astralsorcery.AttunementStartEvent")
-public abstract class CTAttunementStartEvent implements IEntityEvent {
+public class CTAttunementStartEvent implements IEntityEvent {
 
     private final AttunementStartEvent event;
 

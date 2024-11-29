@@ -22,7 +22,7 @@ import java.util.Objects;
 @SidedZenRegister(modDeps = "ftbultimine")
 @ZenExpansion("crafttweaker.player.IPlayer")
 @ZenClass("mods.randomtweaker.ftbultimine.IPlayer")
-public abstract class IPlayerExpansionFTBU {
+public class IPlayerExpansionFTBU {
 
     public static String langKey = null;
 
@@ -30,12 +30,11 @@ public abstract class IPlayerExpansionFTBU {
     public static void setAllowFTBUltimine(IPlayer player, boolean flag) {
         EntityPlayer mcPlayer = CraftTweakerMC.getPlayer(player);
         if (!(mcPlayer instanceof EntityPlayerMP)) {
-            CraftTweakerAPI.logError("The IPlayer object is not an EntityPlayerMP object.");
+            CraftTweakerAPI.logError("The IPlayer instance is not an EntityPlayerMP instance.");
             return;
         }
         FTBUltimineTag capability = mcPlayer.getCapability(CapabilityRegistryHandler.FTB_ULTIMINE_CAPABILITY, null);
         Objects.requireNonNull(capability).setAllow(flag);
-
         NetworkManager.FTBUltimineTag.sendClientCustomPacket(mcPlayer); // send to client
     }
 
@@ -43,7 +42,7 @@ public abstract class IPlayerExpansionFTBU {
     public static boolean isAllowFTBUltimine(IPlayer player) {
         EntityPlayer mcPlayer = CraftTweakerMC.getPlayer(player);
         if (!(mcPlayer instanceof EntityPlayerMP)) {
-            CraftTweakerAPI.logError("The IPlayer object is not an EntityPlayerMP object.");
+            CraftTweakerAPI.logError("The IPlayer instance is not an EntityPlayerMP instance.");
             return false;
         }
         FTBUltimineTag capability = mcPlayer.getCapability(CapabilityRegistryHandler.FTB_ULTIMINE_CAPABILITY, null);

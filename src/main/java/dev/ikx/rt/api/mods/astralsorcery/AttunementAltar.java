@@ -16,7 +16,7 @@ import stanhebben.zenscript.annotations.ZenMethod;
 
 @SidedZenRegister(modDeps = "astralsorcery")
 @ZenClass("mods.randomtweaker.astralsorcery.AttunementAltar")
-public abstract class IAttunementAltar {
+public class AttunementAltar {
 
     @ZenMethod
     public static void addRecipe(IIngredient input, IItemStack output, String constellationString) {
@@ -66,8 +66,8 @@ public abstract class IAttunementAltar {
         @Override
         public String describe() {
             return "Add attunement recipe " +
-                ingredient.toString() + (constellationString != null ? ", constellation : " + constellationString : "")
-                + " -> " + output.toString();
+                    ingredient.toString() + (constellationString != null ? ", constellation : " + constellationString : "")
+                    + " -> " + output.toString();
         }
 
         @Override

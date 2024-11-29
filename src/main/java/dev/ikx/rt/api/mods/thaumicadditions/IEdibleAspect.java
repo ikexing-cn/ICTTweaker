@@ -1,94 +1,45 @@
 package dev.ikx.rt.api.mods.thaumicadditions;
 
-import crafttweaker.CraftTweakerAPI;
-import crafttweaker.IAction;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
-import crafttweaker.api.entity.IEntityLivingBase;
 import crafttweaker.api.item.IItemStack;
-import crafttweaker.api.minecraft.CraftTweakerMC;
-import crafttweaker.api.potions.IPotionEffect;
 import dev.ikx.rt.api.mods.thaumcraft.IAspect;
 import dev.ikx.rt.api.mods.thaumcraft.IAspectList;
-
-import org.zeith.thaumicadditions.api.EdibleAspect;
+import dev.ikx.rt.compact.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 
+@Deprecated
 @SidedZenRegister(modDeps = "thaumadditions")
-@ZenClass("mods.randomtweaker.thaumadditions.IEdibleAspect")
+@ZenClass(IEdibleAspect.ZEN_CLASS)
 public abstract class IEdibleAspect {
 
-    @ZenMethod
-    public static void addEatCall(IAspect aspect, EatFunction function) {
-        CraftTweakerAPI.apply(new IAction() {
-            @Override public void apply() {
-                EdibleAspect.addEatCall(aspect.getInternal(), (entity, count) -> {
-                    entity.addPotionEffect(CraftTweakerMC.getPotionEffect(function.apply(count)));
-                    return true;
-                });
-            }
+    public static final String ZEN_CLASS = "mods.randomtweaker.thaumadditions.IEdibleAspect";
+    public static DeprecatedCompact compact = new DeprecatedCompact(ZEN_CLASS, MCEdibleAspect.ZEN_CLASS);
 
-            @Override public String describe() {
-                return "Adding EatCall -> " + aspect.getName();
-            }
-        });
+    @ZenMethod
+    public static void addEatCall(IAspect aspect, MCEdibleAspect.EatFunction function) {
+        compact.callVoid(() -> MCEdibleAspect.addEatCall(aspect, function));
     }
 
     @ZenMethod
-    public static void addAdvancedEatCall(IAspect aspect, EatFunctionWithEntity function) {
-        CraftTweakerAPI.apply(new IAction() {
-            @Override public void apply() {
-                EdibleAspect.addEatCall(aspect.getInternal(), (entity, count) -> function.apply(CraftTweakerMC.getIEntityLivingBase(entity), count));
-            }
-
-            @Override public String describe() {
-                return "Adding EatCall -> " + aspect.getName();
-            }
-        });
+    public static void addAdvancedEatCall(IAspect aspect, MCEdibleAspect.EatFunctionWithEntity function) {
+        compact.callVoid(() -> MCEdibleAspect.addAdvancedEatCall(aspect, function));
     }
 
     @ZenMethod
     public static void removeEatCall(IAspect aspect) {
-        CraftTweakerAPI.apply(new IAction() {
-            @Override public void apply() {
-                EdibleAspect.EAT_FUNCTIONS.entrySet().removeIf(entry -> entry.getKey().getTag().equals(aspect.getInternal().getTag()));
-            }
-
-            @Override public String describe() {
-                return "Removing EatCall -> " + aspect.getName();
-            }
-        });
+        compact.callVoid(() -> MCEdibleAspect.removeEatCall(aspect));
     }
 
     @ZenMethod
     public static IItemStack applyToFoodStack(IItemStack stack, IAspectList aspects) {
-        return CraftTweakerMC.getIItemStack(EdibleAspect.applyToFoodStack(CraftTweakerMC.getItemStack(stack), aspects.getInternal()));
+        return compact.call(() -> MCEdibleAspect.applyToFoodStack(stack, aspects));
     }
 
     @ZenMethod
     public static IAspectList getSalt(IItemStack stack) {
-        return IAspectList.of(EdibleAspect.getSalt(CraftTweakerMC.getItemStack(stack)));
-    }
-
-    
-    @SidedZenRegister(modDeps = "thaumadditions")
-    @ZenClass("mods.randomtweaker.thaumadditions.EatFunction")
-    @FunctionalInterface
-    public interface EatFunction {
-
-        IPotionEffect apply(int count);
-
-    }
-
-    
-    @SidedZenRegister(modDeps = "thaumadditions")
-    @ZenClass("mods.randomtweaker.thaumadditions.EatFunctionWithEntity")
-    @FunctionalInterface
-    public interface EatFunctionWithEntity {
-
-        boolean apply(IEntityLivingBase entity, int count);
-
+        return compact.call(() -> MCEdibleAspect.getSalt(stack));
     }
 
 }

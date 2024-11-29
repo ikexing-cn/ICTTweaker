@@ -16,9 +16,9 @@ import stanhebben.zenscript.annotations.ZenMethod;
 
 
 @SidedZenRegister(modDeps = "astralsorcery")
-@ZenClass("mods.randomtweaker.astralsorcery.IEventManager")
 @ZenExpansion("crafttweaker.events.IEventManager")
-public abstract class CTEventManagerAS {
+@ZenClass("mods.randomtweaker.astralsorcery.IEventManager")
+public class CTEventManagerAS {
 
     private static final EventList<CTAttunementRecipeCompleteEvent> attunementCompleteEventList = new EventList<>();
     private static final EventList<CTAttunementStartEvent> attunementStartEventList = new EventList<>();
