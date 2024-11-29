@@ -1,4 +1,4 @@
-package dev.ikx.rt.impl.internal.network;
+package dev.ikx.rt.impl.mods.ftbultimine.network;
 
 import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
 import io.netty.buffer.ByteBuf;

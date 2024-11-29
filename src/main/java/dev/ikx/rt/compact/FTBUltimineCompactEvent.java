@@ -1,8 +1,8 @@
 package dev.ikx.rt.compact;
 
 import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
-import dev.ikx.rt.impl.internal.event.FTBUltimineEvent;
-import dev.ikx.rt.impl.internal.network.NetworkManager;
+import dev.ikx.rt.impl.mods.ftbultimine.event.FTBUltimineEvent;
+import dev.ikx.rt.impl.mods.ftbultimine.network.NetworkManager;
 import dev.ikx.rt.impl.internal.utils.InternalUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

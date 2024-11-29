@@ -1,4 +1,4 @@
-package dev.ikx.rt.impl.internal.event;
+package dev.ikx.rt.impl.mods.ftbultimine.event;
 
 import dev.ikx.rt.Constant;
 import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
