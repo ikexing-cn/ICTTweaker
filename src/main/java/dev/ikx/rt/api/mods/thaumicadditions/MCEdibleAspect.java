@@ -37,7 +37,7 @@ public class MCEdibleAspect {
 
     @ZenMethod
     public static void removeEatCall(IAspect aspect) {
-
+        CraftTweakerAPI.apply(new RemoveEatCall(aspect));
     }
 
     @ZenMethod
