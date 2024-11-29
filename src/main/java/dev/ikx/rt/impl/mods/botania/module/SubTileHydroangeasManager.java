@@ -32,10 +32,10 @@ public class SubTileHydroangeasManager {
 
     public static class HydroangeasHandler {
 
-        ILiquidStack liquidConsume;
-        ILiquidStack liquidCatalyst;
-        double fluidFactor;
-        int manaGen;
+        public final ILiquidStack liquidConsume;
+        public final ILiquidStack liquidCatalyst;
+        public final double fluidFactor;
+        public final int manaGen;
 
         public HydroangeasHandler(ILiquidStack input, int manaGen, ILiquidStack liquidCatalyst, double factor) {
             this.liquidConsume = input;

@@ -22,8 +22,8 @@ public abstract class IWorldExpansionNa {
     }
 
     @ZenMethod
-    public static dev.ikx.rt.api.mods.naturesaura.MCAuraChunk getAuraChunkFromWorld(IWorld world, IBlockPos pos) {
-        return new dev.ikx.rt.api.mods.naturesaura.MCAuraChunk(world, pos);
+    public static CTAuraChunk getAuraChunkInGame(IWorld world, IBlockPos pos) {
+        return new CTAuraChunk(world, pos);
     }
 
     @ZenMethod

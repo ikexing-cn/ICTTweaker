@@ -1,71 +1,69 @@
 package dev.ikx.rt.api.mods.botania.render;
 
-import dev.ikx.rt.compact.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
+import vazkii.botania.common.Botania;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
-@Deprecated
+
 @SidedZenRegister(modDeps = "botania")
-@ZenClass(IBotaniaFXHelper.ZEN_CLASS)
-public class IBotaniaFXHelper {
+@ZenClass(BotaniaFXHelper.ZEN_CLASS)
+public class BotaniaFXHelper {
 
-    public static final String ZEN_CLASS = "mods.randomtweaker.botania.IBotaniaFXHelper";
-    public static DeprecatedCompact compact = new DeprecatedCompact(ZEN_CLASS, BotaniaFXHelper.ZEN_CLASS);
-
+    public static final String ZEN_CLASS = "mods.randomtweaker.botania.BotaniaFXHelper";
     @ZenMethod
     public static void setWispFXDistanceLimit(boolean limit) {
-        compact.callVoid(() -> BotaniaFXHelper.setWispFXDistanceLimit(limit));
+        Botania.proxy.setWispFXDistanceLimit(limit);
     }
 
     @ZenMethod
     public static void setWispFXDepthTest(boolean depth) {
-        compact.callVoid(() -> BotaniaFXHelper.setWispFXDepthTest(depth));
+        Botania.proxy.setWispFXDepthTest(depth);
     }
 
     @ZenMethod
     public static void setSparkleFXNoClip(boolean noclip) {
-        compact.callVoid(() -> BotaniaFXHelper.setSparkleFXNoClip(noclip));
+        Botania.proxy.setSparkleFXNoClip(noclip);
     }
 
     @ZenMethod
     public static void setSparkleFXCorrupt(boolean corrupt) {
-        compact.callVoid(() -> BotaniaFXHelper.setSparkleFXCorrupt(corrupt));
+        Botania.proxy.setSparkleFXCorrupt(corrupt);
     }
 
     @ZenMethod
     public static void sparkleFX(double x, double y, double z, float r, float g, float b, float size, int m) {
-        compact.callVoid(() -> BotaniaFXHelper.sparkleFX(x, y, z, r, g, b, size, m));
+        sparkleFX(x, y, z, r, g, b, size, m, false);
     }
 
     @ZenMethod
     public static void sparkleFX(double x, double y, double z, float r, float g, float b, float size, int m, boolean fake) {
-        compact.callVoid(() -> BotaniaFXHelper.sparkleFX(x, y, z, r, g, b, size, m, fake));
+        Botania.proxy.sparkleFX(x, y, z, r, g, b, size, m, fake);
     }
 
     @ZenMethod
     public static void wispFX(double x, double y, double z, float r, float g, float b, float size) {
-        compact.callVoid(() -> BotaniaFXHelper.wispFX(x, y, z, r, g, b, size));
+        wispFX(x, y, z, r, g, b, size, 0F);
     }
 
     @ZenMethod
     public static void wispFX(double x, double y, double z, float r, float g, float b, float size, float gravity) {
-        compact.callVoid(() -> BotaniaFXHelper.wispFX(x, y, z, r, g, b, size, gravity));
+        wispFX(x, y, z, r, g, b, size, gravity, 1F);
     }
 
     @ZenMethod
     public static void wispFX(double x, double y, double z, float r, float g, float b, float size, float gravity, float maxAgeMul) {
-        compact.callVoid(() -> BotaniaFXHelper.wispFX(x, y, z, r, g, b, size, gravity, maxAgeMul));
+        wispFX(x, y, z, r, g, b, size, 0, -gravity, 0, maxAgeMul);
     }
 
     @ZenMethod
     public static void wispFX(double x, double y, double z, float r, float g, float b, float size, float motionX, float motionY, float motionZ) {
-        compact.callVoid(() -> BotaniaFXHelper.wispFX(x, y, z, r, g, b, size, motionX, motionY, motionZ));
+        wispFX(x, y, z, r, g, b, size, motionX, motionY, motionZ, 1F);
     }
 
     @ZenMethod
     public static void wispFX(double x, double y, double z, float r, float g, float b, float size, float motionX, float motionY, float motionZ, float maxAgeMul) {
-        compact.callVoid(() -> BotaniaFXHelper.wispFX(x, y, z, r, g, b, size, motionX, motionY, motionZ, maxAgeMul));
+        Botania.proxy.wispFX(x, y, z, r, g, b, size, motionX, motionY, motionZ, maxAgeMul);
     }
 
 }

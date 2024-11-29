@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 @SidedZenRegister(modDeps = "botania")
 @ZenClass("mods.randomtweaker.botania.AlfPortalDroppedEvent")
-public abstract class CTAlfPortalDroppedEvent implements IEventCancelable {
+public class CTAlfPortalDroppedEvent implements IEventCancelable {
 
     private final AlfPortalDroppedEvent event;
 

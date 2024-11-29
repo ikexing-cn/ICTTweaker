@@ -12,7 +12,6 @@ import thaumcraft.api.aspects.Aspect;
 @SidedZenRegister(modDeps = "thaumcraft")
 @ZenClass("mods.randomtweaker.thaumcraft.IAspect")
 public interface IAspect {
-
     static IAspect of(Aspect aspect) {
         return new MCAspect(aspect);
     }

@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @SidedZenRegister(modDeps = "botania")
 @ZenClass("mods.randomtweaker.botania.ElvenTradeEvent")
-public abstract class CTElvenTradeEvent implements IEventCancelable {
+public class CTElvenTradeEvent implements IEventCancelable {
 
     private final ElvenTradeEvent event;
 

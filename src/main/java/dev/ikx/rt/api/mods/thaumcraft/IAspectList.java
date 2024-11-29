@@ -11,7 +11,6 @@ import thaumcraft.api.aspects.AspectList;
 @ZenClass("mods.randomtweaker.thaumcraft.IAspectList")
 @IterableSimple("mods.randomtweaker.thaumcraft.IAspect")
 public interface IAspectList extends Iterable<IAspect> {
-
     static IAspectList of(AspectList list) {
         return new MCAspectList(list);
     }

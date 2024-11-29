@@ -20,7 +20,6 @@ import thaumcraft.common.lib.utils.InventoryUtils;
 
 import java.util.Objects;
 
-
 @SidedZenRegister(modDeps = "thaumcraft")
 @ZenExpansion("crafttweaker.player.IPlayer")
 @ZenClass("mods.randomtweaker.thaumcraft.IPlayer")

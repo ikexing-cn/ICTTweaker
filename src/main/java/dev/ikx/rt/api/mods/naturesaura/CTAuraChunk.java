@@ -8,15 +8,15 @@ import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
-@ZenClass(MCAuraChunk.ZEN_CLASS)
+@ZenClass(CTAuraChunk.ZEN_CLASS)
 @SidedZenRegister(modDeps = "naturesaura")
-public class MCAuraChunk {
+public class CTAuraChunk {
 
     public static final String ZEN_CLASS = "mods.randomtweaker.naturesaura.AuraChunk";
 
     private final IAuraChunk auraChunk;
 
-    public MCAuraChunk(IWorld world, IBlockPos pos) {
+    public CTAuraChunk(IWorld world, IBlockPos pos) {
         this.auraChunk = IAuraChunk.getAuraChunk(CraftTweakerMC.getWorld(world), CraftTweakerMC.getBlockPos(pos));
     }
 

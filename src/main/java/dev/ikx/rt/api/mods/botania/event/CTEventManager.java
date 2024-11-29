@@ -19,7 +19,7 @@ import stanhebben.zenscript.annotations.ZenMethod;
 @SidedZenRegister(modDeps = "botania")
 @ZenClass("mods.randomtweaker.botania.IEventManager")
 @ZenExpansion("crafttweaker.events.IEventManager")
-public abstract class CTEventManager {
+public class CTEventManager {
 
     private static final EventList<CTPoolTradeEvent> poolTradeEventList = new EventList<>();
     private static final EventList<CTElvenTradeEvent> elvenTradeEventList = new EventList<>();

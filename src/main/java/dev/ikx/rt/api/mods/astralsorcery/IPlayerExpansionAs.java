@@ -1,25 +1,25 @@
 package dev.ikx.rt.api.mods.astralsorcery;
 
 import crafttweaker.CraftTweakerAPI;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.player.IPlayer;
 import hellfirepvp.astralsorcery.common.constellation.IMajorConstellation;
 import hellfirepvp.astralsorcery.common.data.research.ResearchManager;
-
-import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.math.MathHelper;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethod;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
+
+import java.util.List;
 
 
 @SidedZenRegister(modDeps = "astralsorcery")
 @ZenExpansion("crafttweaker.player.IPlayer")
 @ZenClass("mods.randomtweaker.astralsorcery.IPlayer")
-public abstract class IPlayerExpansionAs {
+public class IPlayerExpansionAs {
 
     @ZenMethod
     public static float getPerkPercentToNextLevel(IPlayer player) {
