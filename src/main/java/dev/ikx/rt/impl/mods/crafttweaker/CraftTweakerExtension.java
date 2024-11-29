@@ -3,7 +3,7 @@ package dev.ikx.rt.impl.mods.crafttweaker;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.zenscript.GlobalRegistry;
 import dev.ikx.rt.api.internal.file.IProp;
-import dev.ikx.rt.api.internal.file.Properties;
+import dev.ikx.rt.api.internal.file.Props;
 import dev.ikx.rt.api.internal.utils.IInputPattern;
 import dev.ikx.rt.api.mods.botania.subtile.IHydroangeas;
 import dev.ikx.rt.api.mods.botania.subtile.IOrechid;
@@ -20,8 +20,8 @@ public class CraftTweakerExtension {
     }
 
     public static void registerSpecialClass() {
-        if (Properties.isRegister(RTConfig.RandomTweaker.Prop)) {
-            CraftTweakerAPI.registerClass(Properties.class);
+        if (Props.isRegister(RTConfig.RandomTweaker.Prop)) {
+            CraftTweakerAPI.registerClass(Props.class);
             CraftTweakerAPI.registerClass(IProp.class);
         }
         if (Loader.isModLoaded("botania")) {

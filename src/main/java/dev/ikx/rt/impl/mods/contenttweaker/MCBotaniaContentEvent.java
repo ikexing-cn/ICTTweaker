@@ -4,7 +4,7 @@ import baubles.api.BaublesApi;
 import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import crafttweaker.CraftTweakerAPI;
 import dev.ikx.rt.Main;
-import dev.ikx.rt.api.internal.file.Properties;
+import dev.ikx.rt.api.internal.file.Props;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.impl.mods.contenttweaker.mana.bauble.MCManaBaubleContent;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -69,7 +69,7 @@ public class MCBotaniaContentEvent {
 
     private static void createFlowerBlockState(String name) {
         String nameL = name.toLowerCase();
-        String path = Properties.getPath(System.getProperty("user.dir"), "resources", "contenttweaker", "blockstates", nameL + ".json");
+        String path = Props.getPath(System.getProperty("user.dir"), "resources", "contenttweaker", "blockstates", nameL + ".json");
         File file = new File(path);
         if (!file.exists()) {
             if (nameL.contains("chibi")) {

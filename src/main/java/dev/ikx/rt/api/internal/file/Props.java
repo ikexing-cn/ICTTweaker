@@ -10,18 +10,19 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
-@ZenClass(Properties.ZEN_CLASS)
-public class Properties {
+@ZenClass(Props.ZEN_CLASS)
+public class Props {
 
-    public static final String ZEN_CLASS = "mods.randomtweaker.file.Properties";
+    public static final String ZEN_CLASS = "mods.randomtweaker.file.Props";
 
     public static String FILE = getPath(System.getProperty("user.dir"), "rt.properties");
 
     @ZenMethod
     public static void write(String key, String value) {
-        java.util.Properties prop = new java.util.Properties();
+        Properties prop = new Properties();
         try (FileReader fr = new FileReader(FILE)) {
             prop.load(fr);
             prop.setProperty(key, value);
@@ -64,7 +65,7 @@ public class Properties {
 
     @ZenMethod
     public static String read(String key) {
-        java.util.Properties prop = new java.util.Properties();
+        Properties prop = new Properties();
         try (FileReader fr = new FileReader(FILE)) {
             prop.load(fr);
         } catch (IOException ignored) {
@@ -74,7 +75,7 @@ public class Properties {
 
     @ZenMethod
     public static List<String> getAllKeys() {
-        java.util.Properties prop = new java.util.Properties();
+        Properties prop = new Properties();
         try (FileReader fr = new FileReader(FILE)) {
             prop.load(fr);
         } catch (IOException ignored) {
