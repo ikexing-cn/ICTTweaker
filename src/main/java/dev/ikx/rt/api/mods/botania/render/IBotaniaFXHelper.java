@@ -1,6 +1,6 @@
 package dev.ikx.rt.api.mods.botania.render;
 
-import dev.ikx.rt.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;

@@ -6,7 +6,7 @@ import dev.ikx.rt.api.mods.botania.ICocoon;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.api.mods.jei.core.IJeiPanel;
 import dev.ikx.rt.api.mods.jei.core.IJeiRecipe;
-import dev.ikx.rt.compact.CompactManager;
+import dev.ikx.rt.impl.internal.compact.CompactManager;
 import dev.ikx.rt.impl.internal.proxy.IProxy;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;

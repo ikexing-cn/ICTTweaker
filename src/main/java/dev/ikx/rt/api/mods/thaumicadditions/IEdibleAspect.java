@@ -3,7 +3,7 @@ package dev.ikx.rt.api.mods.thaumicadditions;
 import crafttweaker.api.item.IItemStack;
 import dev.ikx.rt.api.mods.thaumcraft.IAspect;
 import dev.ikx.rt.api.mods.thaumcraft.IAspectList;
-import dev.ikx.rt.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;

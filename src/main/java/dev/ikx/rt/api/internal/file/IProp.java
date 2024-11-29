@@ -1,7 +1,7 @@
 package dev.ikx.rt.api.internal.file;
 
 import crafttweaker.api.item.IIngredient;
-import dev.ikx.rt.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 
