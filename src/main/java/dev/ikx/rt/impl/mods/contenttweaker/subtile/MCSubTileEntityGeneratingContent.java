@@ -8,11 +8,9 @@ import com.teamacronymcoders.contenttweaker.api.ctobjects.enums.Hand;
 import com.teamacronymcoders.contenttweaker.api.ctobjects.world.MCWorld;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.world.IBlockPos;
-import dev.ikx.rt.api.internal.utils.ITileData;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityInGame;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.ISubTileEntityGeneratingRepresentation;
-import dev.ikx.rt.impl.internal.utils.MCTileData;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileGenerating;
+import youyihj.zenutils.api.cotx.tile.TileData;
 
 import java.util.List;
 import java.util.Objects;
@@ -31,14 +30,14 @@ import java.util.Objects;
 public class MCSubTileEntityGeneratingContent extends SubTileGenerating implements ISubTileEntityInGame {
 
     public final ISubTileEntityRepresentation subtile;
-    private final ITileData customData = new MCTileData();
+    private final TileData customData = new TileData();
 
     public MCSubTileEntityGeneratingContent(ISubTileEntityRepresentation subtile) {
         this.subtile = subtile;
     }
 
     @Override
-    public ITileData getITileData() {
+    public TileData getTileData() {
         return customData;
     }
 

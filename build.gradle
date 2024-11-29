@@ -42,7 +42,7 @@ minecraft {
     mcpMappingChannel = 'stable'
     mcpMappingVersion = '39'
 
-    username = 'superhelo'
+    username = 'test_user'
 
     def args = ["-ea:${project.group}"]
     if (project.use_coremod.toBoolean()) {

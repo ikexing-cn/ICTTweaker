@@ -1,6 +1,6 @@
 package dev.ikx.rt.impl.internal.event;
 
-import dev.ikx.rt.Main;
+import dev.ikx.rt.Constant;
 import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +17,7 @@ public class FTBUltimineEvent {
     public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof EntityPlayer) {
             CapabilityRegistryHandler.FTBUltimineTagProvider provider = new CapabilityRegistryHandler.FTBUltimineTagProvider();
-            event.addCapability(new ResourceLocation(Main.MODID + ":ftb_ultimine_tag"), provider);
+            event.addCapability(new ResourceLocation(Constant.MODID + ":ftb_ultimine_tag"), provider);
         }
     }
 

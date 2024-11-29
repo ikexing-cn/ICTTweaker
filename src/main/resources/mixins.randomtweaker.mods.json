@@ -1,7 +1,7 @@
 {
   "required": false,
   "compatibilityLevel": "JAVA_8",
-  "package": "dev.ikx.rt.mixins",
+  "package": "dev.ikx.rt.impl.internal.mixins",
   "minVersion": "0.8",
   "refmap": "mixins.randomtweaker.refmap.json",
   "mixins": [

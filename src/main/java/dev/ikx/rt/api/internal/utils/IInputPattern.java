@@ -9,7 +9,6 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 import java.util.Map;
 
-
 @SidedZenRegister
 @ZenClass("mods.randomtweaker.utils.IInputPattern")
 public interface IInputPattern {

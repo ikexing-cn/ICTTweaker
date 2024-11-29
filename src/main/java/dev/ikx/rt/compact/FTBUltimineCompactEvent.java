@@ -1,4 +1,4 @@
-﻿package dev.ikx.rt.compact;
+package dev.ikx.rt.compact;
 
 import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
 import dev.ikx.rt.impl.internal.event.FTBUltimineEvent;

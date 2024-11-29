@@ -1,4 +1,4 @@
-﻿package dev.ikx.rt.compact;
+package dev.ikx.rt.compact;
 
 import com.google.common.collect.Lists;
 import net.minecraftforge.fml.common.Loader;

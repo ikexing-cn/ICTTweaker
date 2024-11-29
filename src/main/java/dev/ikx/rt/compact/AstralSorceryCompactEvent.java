@@ -1,4 +1,4 @@
-﻿package dev.ikx.rt.compact;
+package dev.ikx.rt.compact;
 
 import dev.ikx.rt.api.mods.astralsorcery.event.CTEventManagerAS;
 import dev.ikx.rt.impl.mods.jei.JeiAttunements;

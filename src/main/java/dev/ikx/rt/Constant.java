@@ -1,4 +1,4 @@
-﻿package dev.ikx.rt;
+package dev.ikx.rt;
 
 public class Constant {
     public static final String MODID = "randomtweaker";

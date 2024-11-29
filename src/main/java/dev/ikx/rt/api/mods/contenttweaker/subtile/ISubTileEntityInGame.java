@@ -2,11 +2,9 @@ package dev.ikx.rt.api.mods.contenttweaker.subtile;
 
 import crafttweaker.api.data.IData;
 import crafttweaker.api.world.IBlockPos;
-import crafttweaker.mc1120.data.NBTConverter;
-import dev.ikx.rt.api.internal.utils.ITileData;
+import youyihj.zenutils.api.cotx.tile.TileData;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
-import net.minecraft.nbt.NBTTagCompound;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenGetter;
 import stanhebben.zenscript.annotations.ZenMethod;
@@ -28,14 +26,13 @@ public interface ISubTileEntityInGame {
     @ZenMethod
     @ZenGetter("data")
     default IData getCustomData() {
-        return this.getITileData().getData();
+        return this.getTileData().getData();
     }
 
     @ZenMethod
     @ZenSetter("data")
     default void setCustomData(IData data) {
-        ITileData.checkDataMap(data);
-        this.getITileData().readFromNBT((NBTTagCompound) NBTConverter.from(data));
+        this.getTileData().setData(data);
     }
 
     @ZenMethod
@@ -73,7 +70,7 @@ public interface ISubTileEntityInGame {
     @ZenMethod
     IBlockPos getBindingForCrT();
 
-    ITileData getITileData();
+    TileData getTileData();
 
     Object getInstance();
 
