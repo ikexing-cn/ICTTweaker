@@ -1,12 +1,12 @@
 package dev.ikx.rt.impl.internal.config;
 
 import com.cleanroommc.configanytime.ConfigAnytime;
-import dev.ikx.rt.Main;
+import dev.ikx.rt.Constant;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Comment;
 import net.minecraftforge.common.config.Config.RequiresMcRestart;
 
-@Config(modid = Main.MODID, name = Main.MODID)
+@Config(modid = Constant.MODID, name = Constant.MODID)
 public class RTConfig {
 
     public static final Botania Botania = new Botania();

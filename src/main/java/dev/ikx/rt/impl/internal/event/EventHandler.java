@@ -1,6 +1,6 @@
 package dev.ikx.rt.impl.internal.event;
 
-import dev.ikx.rt.Main;
+import dev.ikx.rt.Constant;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -12,8 +12,8 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equals(Main.MODID)) {
-            ConfigManager.sync(Main.MODID, Config.Type.INSTANCE);
+        if (event.getModID().equals(Constant.MODID)) {
+            ConfigManager.sync(Constant.MODID, Config.Type.INSTANCE);
         }
     }
 

@@ -5,6 +5,7 @@ import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.mc1120.brackets.BracketHandlerItem;
+import dev.ikx.rt.Constant;
 import dev.ikx.rt.Main;
 import dev.ikx.rt.api.mods.jei.core.IJeiBackground;
 import dev.ikx.rt.api.mods.jei.core.IJeiPanel;
@@ -27,7 +28,7 @@ public class MCJeiPanel implements IJeiPanel {
     public String title;
     public IJeiTooltip tooltip;
     public IJeiBackground background;
-    public String modid = Main.MODID;
+    public String modid = Constant.MODID;
     public IItemStack icon = BracketHandlerItem.getItem("minecraft:bedrock", 0);
 
     public MCJeiPanel(String uid, String title) {
