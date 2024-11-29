@@ -5,17 +5,18 @@
   "minVersion": "0.8",
   "refmap": "mixins.randomtweaker.refmap.json",
   "mixins": [
-    "dev.ikx.rt.mixins.botania.MixinBlockCocoon",
-    "dev.ikx.rt.mixins.botania.MixinBlockSpecialFlower",
-    "dev.ikx.rt.mixins.botania.MixinBotaniaAPI",
-    "dev.ikx.rt.mixins.botania.MixinTileAlfPortal",
-    "dev.ikx.rt.mixins.botania.MixinTileCocoon",
-    "dev.ikx.rt.mixins.botania.MixinTilePool",
-    "dev.ikx.rt.mixins.botania.MixinTileSpecialFlower",
-    "dev.ikx.rt.mixins.ftbultimine.MixinFTBUltimine"
+    "botania.MixinBlockSpecialFlower",
+    "botania.MixinBlockCocoon",
+    "botania.MixinBlockSpecialFlower",
+    "botania.MixinBotaniaAPI",
+    "botania.MixinTileAlfPortal",
+    "botania.MixinTileCocoon",
+    "botania.MixinTilePool",
+    "botania.MixinTileSpecialFlower",
+    "ftbultimine.MixinFTBUltimine"
   ],
   "client": [
-    "dev.ikx.rt.mixins.ftbultimine.MixinFTBUltimineClient",
-    "dev.ikx.rt.mixins.tconstruct.MixinContentMaterial"
+    "ftbultimine.MixinFTBUltimineClient",
+    "tconstruct.MixinContentMaterial"
   ]
 }
