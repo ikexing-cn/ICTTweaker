@@ -6,7 +6,7 @@ import crafttweaker.CraftTweakerAPI;
 import dev.ikx.rt.api.internal.file.Props;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
-import dev.ikx.rt.impl.mods.contenttweaker.mana.bauble.MCManaBaubleContent;
+import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleContent;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -60,8 +60,8 @@ public class CustomBotaniaEvent {
             IItemHandler inv = BaublesApi.getBaublesHandler((EntityPlayer) evt.getEntityLiving());
             for (int i = 0; i < inv.getSlots(); i++) {
                 ItemStack stack = inv.getStackInSlot(i);
-                if (!stack.isEmpty() && stack.getItem() instanceof MCManaBaubleContent) {
-                    ((MCManaBaubleContent) stack.getItem()).onUnequipped(stack, evt.getEntityLiving());
+                if (!stack.isEmpty() && stack.getItem() instanceof CTManaBaubleContent) {
+                    ((CTManaBaubleContent) stack.getItem()).onUnequipped(stack, evt.getEntityLiving());
                 }
             }
         }

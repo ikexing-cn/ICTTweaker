@@ -1,12 +1,10 @@
 package dev.ikx.rt.api.mods.contenttweaker;
 
-import dev.ikx.rt.api.mods.contenttweaker.aspect.IAspectRepresentation;
-import dev.ikx.rt.impl.mods.contenttweaker.aspect.MCAspectRepresentation;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
-
+import dev.ikx.rt.api.mods.contenttweaker.aspect.CTAspectRepresentation;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethodStatic;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 
 @SidedZenRegister(modDeps = {"thaumcraft", "contenttweaker"})
@@ -15,8 +13,8 @@ import stanhebben.zenscript.annotations.ZenMethodStatic;
 public abstract class ExpandVanillaFactoryWithThaumcraft {
 
     @ZenMethodStatic
-    public static IAspectRepresentation createAspect(String tag, int color) {
-        return new MCAspectRepresentation(tag, color);
+    public static CTAspectRepresentation createAspect(String tag, int color) {
+        return new CTAspectRepresentation(tag, color);
     }
 
 }

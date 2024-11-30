@@ -1,5 +1,7 @@
 package dev.ikx.rt.api.mods.contenttweaker.mana.item;
 
+import com.teamacronymcoders.base.registrysystem.ItemRegistry;
+import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import com.teamacronymcoders.contenttweaker.modules.vanilla.items.ItemRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IGetEntityLifeSpan;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IManaWithItem;
@@ -14,7 +16,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
  */
 @SidedZenRegister(modDeps = {"contenttweaker", "botania"})
 @ZenClass("mods.randomtweaker.cote.ManaItem")
-public abstract class IManaItemRepresentation extends ItemRepresentation {
+public class CTManaItemRepresentation extends ItemRepresentation {
 
     @ZenProperty
     public boolean hasFull;
@@ -36,6 +38,12 @@ public abstract class IManaItemRepresentation extends ItemRepresentation {
     public IManaWithItem canReceiveManaFromItem;
     @ZenProperty
     public IGetEntityLifeSpan entityLifeSpan;
+
+    public CTManaItemRepresentation(String unlocalizedName, int maxMana) {
+        this.setUnlocalizedName(unlocalizedName);
+        this.setMaxMana(maxMana);
+        this.setMaxStackSize(1);
+    }
 
     @ZenMethod
     public IManaWithPool getCanExportManaToPool() {
@@ -133,6 +141,8 @@ public abstract class IManaItemRepresentation extends ItemRepresentation {
     }
 
     @Override
-    public abstract void register();
+    public void register() {
+        ContentTweaker.instance.getRegistry(ItemRegistry.class, "ITEM").register(new CTManaItemContent(this));
+    }
 
 }

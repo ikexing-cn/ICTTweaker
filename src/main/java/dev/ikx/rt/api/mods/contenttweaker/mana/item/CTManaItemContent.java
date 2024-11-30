@@ -1,8 +1,7 @@
-package dev.ikx.rt.impl.mods.contenttweaker.mana.item;
+package dev.ikx.rt.api.mods.contenttweaker.mana.item;
 
 import com.teamacronymcoders.contenttweaker.modules.vanilla.items.ItemContent;
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.IManaItemRepresentation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,28 +22,28 @@ import vazkii.botania.api.mana.IManaTooltipDisplay;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
 import youyihj.zenutils.api.cotx.annotation.ExpandContentTweakerEntry;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nonnull;
 
 /**
  * @author superhelo
  */
 @ExpandContentTweakerEntry
-public class MCManaItemContent extends ItemContent implements IManaItem, ICreativeManaProvider, IManaTooltipDisplay {
+public class CTManaItemContent extends ItemContent implements IManaItem, ICreativeManaProvider, IManaTooltipDisplay {
 
     private static final String TAG_MANA = "mana";
     private static final String TAG_CREATIVE = "creative";
     private static final int DEFAULT_MAX_ITEM_USE_DURATION = 40;
-    private final IManaItemRepresentation manaItem;
+    private final CTManaItemRepresentation manaItem;
 
-    public MCManaItemContent(IManaItemRepresentation manaItem) {
+    public CTManaItemContent(CTManaItemRepresentation manaItem) {
         super(manaItem);
         this.manaItem = manaItem;
     }
 
     @ExpandContentTweakerEntry.RepresentationGetter
-    public IManaItemRepresentation getRepresentation() {
+    public CTManaItemRepresentation getRepresentation() {
         return manaItem;
     }
 

@@ -2,7 +2,7 @@ package dev.ikx.rt.impl.mods.contenttweaker.potion;
 
 import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import com.teamacronymcoders.contenttweaker.api.ctobjects.entity.EntityHelper;
-import dev.ikx.rt.api.mods.contenttweaker.potion.IPotionRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.potion.CTPotionRepresentation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.entity.Entity;
@@ -19,10 +19,10 @@ import java.util.Objects;
 @SuppressWarnings("deprecation")
 public class MCPotionContent extends Potion {
 
-    public final IPotionRepresentation potionRepresentation;
+    public final CTPotionRepresentation potionRepresentation;
     public ResourceLocation textureResourceLocation;
 
-    protected MCPotionContent(IPotionRepresentation potionRepresentation) {
+    public MCPotionContent(CTPotionRepresentation potionRepresentation) {
         super(potionRepresentation.badEffectIn, potionRepresentation.liquidColor);
         this.potionRepresentation = potionRepresentation;
         setField();

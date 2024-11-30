@@ -6,14 +6,14 @@ import crafttweaker.api.item.IMutableItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.impl.mods.contenttweaker.mana.bauble.MCManaBauble;
 import dev.ikx.rt.impl.mods.contenttweaker.mana.item.MCManaItem;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
-
-import javax.annotation.Nullable;
 import net.minecraft.item.Item;
 import stanhebben.zenscript.annotations.ZenCaster;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethod;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
+
+import javax.annotation.Nullable;
 
 /**
  * @author superhelo
@@ -22,7 +22,7 @@ import stanhebben.zenscript.annotations.ZenMethod;
 @SidedZenRegister(modDeps = {"contenttweaker", "botania"})
 @ZenExpansion("crafttweaker.item.IItemStack")
 @ZenClass("mods.randomtweaker.botania.IItemStack")
-public abstract class IManaHelper {
+public class IManaHelper {
 
     @ZenMethod
     public static boolean isIManaItem(IItemStack stack) {

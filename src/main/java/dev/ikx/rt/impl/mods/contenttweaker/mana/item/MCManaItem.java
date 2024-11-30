@@ -5,11 +5,13 @@ import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.world.IBlockPos;
 import crafttweaker.api.world.IWorld;
 import dev.ikx.rt.api.mods.contenttweaker.mana.IManaItem;
-import javax.annotation.Nullable;
+import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemContent;
 import net.minecraft.item.ItemStack;
 import vazkii.botania.api.mana.ICreativeManaProvider;
 import vazkii.botania.api.mana.IManaUsingItem;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
+
+import javax.annotation.Nullable;
 
 /**
  * @author superhelo
@@ -31,12 +33,12 @@ public class MCManaItem implements IManaItem {
 
     @Override
     public boolean hasFull() {
-        return itemIn instanceof MCManaItemContent && ((MCManaItemContent) itemIn).getRepresentation().hasFull();
+        return itemIn instanceof CTManaItemContent && ((CTManaItemContent) itemIn).getRepresentation().hasFull();
     }
 
     @Override
     public boolean hasCreative() {
-        return itemIn instanceof MCManaItemContent && ((MCManaItemContent) itemIn).getRepresentation().hasCreative();
+        return itemIn instanceof CTManaItemContent && ((CTManaItemContent) itemIn).getRepresentation().hasCreative();
     }
 
     @Override

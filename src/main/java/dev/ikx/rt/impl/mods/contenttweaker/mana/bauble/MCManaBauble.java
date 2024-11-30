@@ -5,10 +5,12 @@ import crafttweaker.api.entity.IEntityLivingBase;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.api.mods.contenttweaker.mana.IManaBauble;
+import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleContent;
 import dev.ikx.rt.impl.mods.contenttweaker.mana.item.MCManaItem;
-import javax.annotation.Nullable;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nullable;
 
 /**
  * @author superhelo
@@ -32,7 +34,7 @@ public class MCManaBauble extends MCManaItem implements IManaBauble {
 
     @Override
     public String getBaubleType() {
-        return ((MCManaBaubleContent) this.itemIn).getBaubleType(stack).toString();
+        return ((CTManaBaubleContent) this.itemIn).getBaubleType(stack).toString();
     }
 
     @Override

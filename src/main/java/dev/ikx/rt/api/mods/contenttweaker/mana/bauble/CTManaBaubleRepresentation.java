@@ -1,10 +1,12 @@
 package dev.ikx.rt.api.mods.contenttweaker.mana.bauble;
 
+import com.teamacronymcoders.base.registrysystem.ItemRegistry;
+import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IBaubleFunction;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IBaubleFunctionWithReturn;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IBaubleRender;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IGetBaubleType;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.IManaItemRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemRepresentation;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -16,7 +18,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 @SidedZenRegister(modDeps = {"contenttweaker", "botania"})
 @ZenClass("mods.randomtweaker.cote.ManaBauble")
-public abstract class IManaBaubleRepresentation extends IManaItemRepresentation {
+public class CTManaBaubleRepresentation extends CTManaItemRepresentation {
 
     @ZenProperty
     public String baubleType;
@@ -37,6 +39,12 @@ public abstract class IManaBaubleRepresentation extends IManaItemRepresentation 
     @ZenProperty
     public IBaubleFunctionWithReturn willAutoSync;
 
+    public CTManaBaubleRepresentation(String unlocalizedName, int maxMana, String baubleType) {
+        super(unlocalizedName, maxMana);
+        this.setMaxStackSize(1);
+        this.setBaubleType(baubleType);
+    }
+
     @ZenMethod
     public String getBaubleType() {
         return baubleType;
@@ -53,6 +61,12 @@ public abstract class IManaBaubleRepresentation extends IManaItemRepresentation 
     }
 
     @Override
-    public abstract void register();
+    public void register() {
+        if (baubleType.equals("TRINKET")) {
+            ContentTweaker.instance.getRegistry(ItemRegistry.class, "ITEM").register(new CTManaTrinketContent(this));
+        } else {
+            ContentTweaker.instance.getRegistry(ItemRegistry.class, "ITEM").register(new CTManaBaubleContent(this));
+        }
+    }
 
 }

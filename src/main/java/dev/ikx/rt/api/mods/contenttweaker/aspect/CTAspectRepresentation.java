@@ -1,19 +1,21 @@
 package dev.ikx.rt.api.mods.contenttweaker.aspect;
 
 import crafttweaker.CraftTweakerAPI;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
-
-import java.util.Arrays;
-import java.util.Objects;
+import net.minecraft.util.ResourceLocation;
+import org.apache.logging.log4j.LogManager;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;
 import thaumcraft.api.aspects.Aspect;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 
 @SidedZenRegister(modDeps = {"thaumcraft", "contenttweaker"})
 @ZenClass("mods.randomtweaker.cote.Aspect")
-public abstract class IAspectRepresentation {
+public class CTAspectRepresentation {
 
     @ZenProperty
     public int color;
@@ -27,6 +29,12 @@ public abstract class IAspectRepresentation {
     public String image;
     @ZenProperty
     public String chatcolor;
+
+    public CTAspectRepresentation(String tag, int color) {
+        this.setTag(tag);
+        this.setColor(color);
+        this.setImage("contenttweaker:textures/aspects/" + tag.toLowerCase() + ".png");
+    }
 
     public Aspect[] asAspects() {
         if (Objects.nonNull(components) && components.length != 0) {
@@ -90,6 +98,13 @@ public abstract class IAspectRepresentation {
     }
 
     @ZenMethod
-    public abstract void register();
+    public void register() {
+        try {
+            Aspect aspect = new Aspect(this.tag, this.color, this.asAspects(), new ResourceLocation(this.image), this.blend);
+            aspect.setChatcolor(this.chatcolor);
+        } catch (IllegalArgumentException e) {
+            LogManager.getLogger("RandomTweaker").error("Registering {} aspect failed", this.tag);
+        }
+    }
 
 }

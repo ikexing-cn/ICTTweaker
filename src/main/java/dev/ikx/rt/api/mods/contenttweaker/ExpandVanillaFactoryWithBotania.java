@@ -1,13 +1,10 @@
 package dev.ikx.rt.api.mods.contenttweaker;
 
-import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.IManaBaubleRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.IManaItemRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.tool.IIsUsesManaItemRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.mana.item.tool.CTUsageManaItemRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.ISubTileEntityFunctionalRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.ISubTileEntityGeneratingRepresentation;
-import dev.ikx.rt.impl.mods.contenttweaker.mana.bauble.MCManaBaubleRepresentation;
-import dev.ikx.rt.impl.mods.contenttweaker.mana.item.MCManaItemRepresentation;
-import dev.ikx.rt.impl.mods.contenttweaker.mana.item.tool.MCIsUsesManaItemRepresentation;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityRepresentation;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
@@ -23,18 +20,18 @@ import stanhebben.zenscript.annotations.ZenMethodStatic;
 public abstract class ExpandVanillaFactoryWithBotania {
 
     @ZenMethodStatic
-    public static IManaItemRepresentation createManaItem(String unlocalizedName, @Optional(valueLong = 500000) int maxMana) {
-        return new MCManaItemRepresentation(unlocalizedName, maxMana);
+    public static CTManaItemRepresentation createManaItem(String unlocalizedName, @Optional(valueLong = 500000) int maxMana) {
+        return new CTManaItemRepresentation(unlocalizedName, maxMana);
     }
 
     @ZenMethodStatic
-    public static IIsUsesManaItemRepresentation createManaUsingItem(String unlocalizedName, @Optional(valueLong = 500000) int maxMana) {
-        return new MCIsUsesManaItemRepresentation(unlocalizedName, maxMana);
+    public static CTUsageManaItemRepresentation createManaUsingItem(String unlocalizedName, @Optional(valueLong = 500000) int maxMana) {
+        return new CTUsageManaItemRepresentation(unlocalizedName, maxMana);
     }
 
     @ZenMethodStatic
-    public static IManaBaubleRepresentation createManaBauble(String unlocalizedName, String baubleType, @Optional(valueLong = 500000) int maxMana) {
-        return new MCManaBaubleRepresentation(unlocalizedName, maxMana, baubleType);
+    public static CTManaBaubleRepresentation createManaBauble(String unlocalizedName, String baubleType, @Optional(valueLong = 500000) int maxMana) {
+        return new CTManaBaubleRepresentation(unlocalizedName, maxMana, baubleType);
     }
 
     @ZenMethodStatic

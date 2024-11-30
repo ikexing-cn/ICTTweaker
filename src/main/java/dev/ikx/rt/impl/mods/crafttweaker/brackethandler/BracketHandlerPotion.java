@@ -2,17 +2,17 @@ package dev.ikx.rt.impl.mods.crafttweaker.brackethandler;
 
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.BracketHandler;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
 import crafttweaker.zenscript.IBracketHandler;
+import dev.ikx.rt.api.mods.contenttweaker.potion.CTPotionRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.potion.IPotionRepresentation;
 import dev.ikx.rt.impl.internal.event.EventRegister;
-
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.ExpressionCallStatic;
 import stanhebben.zenscript.expression.ExpressionString;
 import stanhebben.zenscript.parser.Token;
 import stanhebben.zenscript.symbols.IZenSymbol;
 import stanhebben.zenscript.type.natives.IJavaMethod;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class BracketHandlerPotion implements IBracketHandler {
 
-    public static IPotionRepresentation getPotion(String name) {
+    public static CTPotionRepresentation getPotion(String name) {
         if (EventRegister.POTION_MAP.containsKey(name)) {
             return EventRegister.POTION_MAP.get(name).potionRepresentation;
         }

@@ -1,30 +1,50 @@
 package dev.ikx.rt.api.mods.contenttweaker.potion;
 
+import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
+import stanhebben.zenscript.annotations.ZenClass;
+import stanhebben.zenscript.annotations.ZenGetter;
+import stanhebben.zenscript.annotations.ZenMethod;
+import stanhebben.zenscript.annotations.ZenSetter;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
-import stanhebben.zenscript.annotations.ZenClass;
-import stanhebben.zenscript.annotations.ZenMethod;
-import stanhebben.zenscript.annotations.ZenProperty;
 
-
+@Deprecated
 @SidedZenRegister(modDeps = "contenttweaker")
-@ZenClass("mods.randomtweaker.cote.IPotionType")
-public abstract class IPotionTypeRepresentation {
+@ZenClass(IPotionTypeRepresentation.ZEN_CLASS)
+public class IPotionTypeRepresentation {
 
-    public String unlocalizedName;
-    public IPotionRepresentation potion;
+    public static final String ZEN_CLASS = "mods.randomtweaker.cote.IPotionType";
+    public static DeprecatedCompact compact = new DeprecatedCompact(ZEN_CLASS, CTPotionRepresentation.ZEN_CLASS);
 
-    @ZenProperty
-    public int duration = 3600;
-    @ZenProperty
-    public int amplifier = 0;
+    public CTPotionTypeRepresentation ctPotionType;
 
-    protected IPotionTypeRepresentation(String unlocalizedName, IPotionRepresentation potion) {
-        this.unlocalizedName = unlocalizedName;
-        this.potion = potion;
+    public IPotionTypeRepresentation(String unlocalizedName, IPotionRepresentation potion) {
+        this.ctPotionType = new CTPotionTypeRepresentation(unlocalizedName, potion.ctPotion);
+    }
+
+    @ZenGetter("duration")
+    public int getDuration() {
+        return compact.call(() -> ctPotionType.duration);
+    }
+
+    @ZenSetter("duration")
+    public void setDuration(int duration) {
+        compact.callVoid(() -> ctPotionType.duration = duration);
+    }
+
+    @ZenGetter("amplifier")
+    public int getAmplifier() {
+        return compact.call(() -> ctPotionType.amplifier);
+    }
+
+    @ZenSetter("amplifier")
+    public void setAmplifier(int amplifier) {
+        compact.callVoid(() -> ctPotionType.amplifier = amplifier);
     }
 
     @ZenMethod
-    public abstract void register();
+    public void register() {
+        compact.callVoid(() -> ctPotionType.register(), "For compatibility reasons, please use the `createMcPotionType` method in version 1.5.x");
+    }
 
 }

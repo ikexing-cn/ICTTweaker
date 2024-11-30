@@ -1,4 +1,4 @@
-package dev.ikx.rt.impl.mods.contenttweaker.mana.bauble;
+package dev.ikx.rt.api.mods.contenttweaker.mana.bauble;
 
 import baubles.api.BaubleType;
 import baubles.api.BaublesApi;
@@ -7,10 +7,7 @@ import baubles.api.cap.BaublesCapabilities;
 import baubles.api.cap.IBaublesItemHandler;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.Main;
-import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.IManaBaubleRepresentation;
-import dev.ikx.rt.impl.mods.contenttweaker.mana.item.MCManaItemContent;
-import java.util.Objects;
-import javax.annotation.Nonnull;
+import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemContent;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -30,23 +27,26 @@ import vazkii.botania.common.core.helper.PlayerHelper;
 import vazkii.botania.common.entity.EntityDoppleganger;
 import youyihj.zenutils.api.cotx.annotation.ExpandContentTweakerEntry;
 
+import javax.annotation.Nonnull;
+import java.util.Objects;
+
 /**
  * @author superhelo
  */
 @ExpandContentTweakerEntry
-public class MCManaBaubleContent extends MCManaItemContent implements IBauble, ICosmeticAttachable, IPhantomInkable, IBaubleRender {
+public class CTManaBaubleContent extends CTManaItemContent implements IBauble, ICosmeticAttachable, IPhantomInkable, IBaubleRender {
 
     private static final String TAG_PHANTOM_INK = "phantomInk";
     private static final String TAG_COSMETIC_ITEM = "cosmeticItem";
-    private final IManaBaubleRepresentation manaBauble;
+    private final CTManaBaubleRepresentation manaBauble;
 
-    public MCManaBaubleContent(IManaBaubleRepresentation manaBauble) {
+    public CTManaBaubleContent(CTManaBaubleRepresentation manaBauble) {
         super(manaBauble);
         this.manaBauble = manaBauble;
     }
 
     @ExpandContentTweakerEntry.RepresentationGetter
-    public IManaBaubleRepresentation getRepresentation() {
+    public CTManaBaubleRepresentation getRepresentation() {
         return manaBauble;
     }
 
