@@ -1,10 +1,8 @@
 package dev.ikx.rt.api.mods.contenttweaker.subtile;
 
 import crafttweaker.CraftTweakerAPI;
-import dev.ikx.rt.Main;
 import dev.ikx.rt.api.mods.contenttweaker.function.subtile.*;
-import dev.ikx.rt.api.mods.contenttweaker.function.subtile.*;
-import org.apache.commons.lang3.tuple.Pair;
+import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -47,30 +45,27 @@ public abstract class ISubTileEntityRepresentation {
     }
 
     @ZenMethod
-    public void register(String typeName, boolean hasMini) {
-        if (Main.SUB_TILE_GENERATING_MAP.containsKey(unlocalizedName)) {
+    public void register(BotaniaManager.SubtileEntityType typeName, boolean hasMini) {
+        if (BotaniaManager.INSTANCE.getSubTileEntityMap().containsKey(unlocalizedName)) {
             CraftTweakerAPI.logError("All SubTileEntity must be unique. Key: contenttweaker:" + unlocalizedName + " is not.",
                     new UnsupportedOperationException());
         } else {
-            if (typeName.equals("functional")) {
-                Main.SUB_TILE_GENERATING_MAP.put(unlocalizedName, Pair.of(typeName, this));
-                if (hasMini)
-                    registerMini(this);
-            } else {
-                Main.SUB_TILE_GENERATING_MAP.put(unlocalizedName, Pair.of(typeName, this));
-            }
+            if (typeName == BotaniaManager.SubtileEntityType.FUNCTIONAL && hasMini)
+                registerMini(this);
             BotaniaAPI.subtilesForCreativeMenu.add(unlocalizedName);
+            BotaniaManager.INSTANCE.registerSubtileEntity(unlocalizedName, typeName, this);
         }
     }
 
     protected void registerMini(ISubTileEntityRepresentation subtile) {
-        Main.SUB_TILE_GENERATING_MAP.put(unlocalizedName + "Chibi", Pair.of("functional", this));
+        BotaniaManager.INSTANCE.registerSubtileEntity(unlocalizedName + "Chibi", BotaniaManager.SubtileEntityType.FUNCTIONAL, subtile);
+
         BotaniaAPI.subtilesForCreativeMenu.add(unlocalizedName + "Chibi");
         BotaniaAPI.miniFlowers.put(unlocalizedName, unlocalizedName + "Chibi");
 
         RecipeMiniFlower recipe = new RecipeMiniFlower(unlocalizedName + "Chibi", unlocalizedName, 2500);
-        BotaniaAPI.manaInfusionRecipes.add(recipe);
         BotaniaAPI.miniFlowerRecipes.add(recipe);
+        BotaniaAPI.manaInfusionRecipes.add(recipe);
     }
 
 }

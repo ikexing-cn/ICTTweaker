@@ -5,7 +5,6 @@ import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import dev.ikx.rt.Main;
 import dev.ikx.rt.impl.internal.config.RTConfig;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
@@ -59,12 +58,12 @@ public class Book {
 
         @ReflectionInvoked
         public void undo() {
-            Main.HIDDEN_MATERIAL_LIST.remove(this.material);
+            TConstructManager.INSTANCE.getHiddenMaterialList().remove(this.material);
         }
 
         @Override
         public void apply() {
-            Main.HIDDEN_MATERIAL_LIST.add(this.material);
+            TConstructManager.INSTANCE.getHiddenMaterialList().add(this.material);
         }
 
         @Override
@@ -74,7 +73,7 @@ public class Book {
 
         @Override
         public boolean validate() {
-            return RTConfig.Tconstruct.iconModification && !Main.HIDDEN_MATERIAL_LIST.contains(this.material);
+            return RTConfig.Tconstruct.iconModification && !TConstructManager.INSTANCE.getHiddenMaterialList().contains(this.material);
         }
 
         @Override
@@ -99,12 +98,12 @@ public class Book {
 
         @ReflectionInvoked
         public void undo() {
-            Main.MATERIAL_SHOW_ITEM_MAP.remove(this.material, CraftTweakerMC.getItemStack(this.item));
+            TConstructManager.INSTANCE.unregisterShowItem(this.material, CraftTweakerMC.getItemStack(this.item));
         }
 
         @Override
         public void apply() {
-            Main.MATERIAL_SHOW_ITEM_MAP.put(this.material, CraftTweakerMC.getItemStack(this.item));
+            TConstructManager.INSTANCE.registerShowItem(this.material, CraftTweakerMC.getItemStack(this.item));
         }
 
         @Override
@@ -114,7 +113,8 @@ public class Book {
 
         @Override
         public boolean validate() {
-            return RTConfig.Tconstruct.iconModification && !Main.MATERIAL_SHOW_ITEM_MAP.containsKey(this.material);
+            return RTConfig.Tconstruct.iconModification &&
+                    !TConstructManager.INSTANCE.getMaterialShowItemMap().containsKey(this.material);
         }
 
         @Override
@@ -141,12 +141,12 @@ public class Book {
 
         @ReflectionInvoked
         public void undo() {
-            Main.MATERIAL_PRIORITY_MAP.remove(this.material, this.priority);
+            TConstructManager.INSTANCE.unregisterPriority(this.material, this.priority);
         }
 
         @Override
         public void apply() {
-            Main.MATERIAL_PRIORITY_MAP.put(this.material, this.priority);
+            TConstructManager.INSTANCE.registerPriority(this.material, this.priority);
         }
 
         @Override
@@ -156,7 +156,8 @@ public class Book {
 
         @Override
         public boolean validate() {
-            return RTConfig.Tconstruct.iconModification && !Main.MATERIAL_PRIORITY_MAP.containsKey(this.material);
+            return RTConfig.Tconstruct.iconModification &&
+                    !TConstructManager.INSTANCE.getMaterialPriorityMap().containsKey(this.material);
         }
 
         @Override

@@ -1,6 +1,6 @@
 package dev.ikx.rt.impl.internal.mixins.botania;
 
-import dev.ikx.rt.Main;
+import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityFunctionalContent;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityGeneratingContent;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +24,7 @@ public abstract class MixinBotaniaAPI {
 
     @Inject(method = "getSignatureForName", at = @At(value = "HEAD"), cancellable = true)
     private static void injectGetSignatureForName(String name, CallbackInfoReturnable<SubTileSignature> cir) {
-        if (Main.SUB_TILE_GENERATING_MAP.containsKey(name)) {
+        if (BotaniaManager.INSTANCE.getSubTileEntityMap().containsKey(name)) {
             if (!customSubTileSignatures.containsKey(name))
                 customSubTileSignatures.put(name, new BasicSignature(name));
             cir.setReturnValue(customSubTileSignatures.get(name));
@@ -33,8 +33,8 @@ public abstract class MixinBotaniaAPI {
 
     @Inject(method = "getSubTileMapping", at = @At(value = "HEAD"), cancellable = true)
     private static void injectGetSubTileMapping(String key, CallbackInfoReturnable<Class<? extends SubTileEntity>> cir) {
-        if (Main.SUB_TILE_GENERATING_MAP.containsKey(key)) {
-            if (Main.SUB_TILE_GENERATING_MAP.get(key).getKey().equals("generating")) {
+        if (BotaniaManager.INSTANCE.getSubTileEntityMap().containsKey(key)) {
+            if (BotaniaManager.INSTANCE.getSubTileEntityMap().get(key).getKey() == BotaniaManager.SubtileEntityType.GENERATING) {
                 cir.setReturnValue(MCSubTileEntityGeneratingContent.class);
             } else {
                 cir.setReturnValue(MCSubTileEntityFunctionalContent.class);

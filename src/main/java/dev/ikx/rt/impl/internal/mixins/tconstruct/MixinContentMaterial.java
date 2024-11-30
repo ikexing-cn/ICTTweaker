@@ -1,6 +1,6 @@
 package dev.ikx.rt.impl.internal.mixins.tconstruct;
 
-import dev.ikx.rt.Main;
+import dev.ikx.rt.api.mods.tconstruct.TConstructManager;
 import dev.ikx.rt.impl.internal.clazz.mods.tconstruct.AbstractMaterialSectionTransformerHooks;
 import dev.ikx.rt.impl.internal.config.RTConfig;
 import org.spongepowered.asm.mixin.Mixin;
@@ -29,7 +29,7 @@ public class MixinContentMaterial {
 	private void injectAddDisplayItems(ArrayList<BookElement> list, int x, CallbackInfo ci, List displayTools) {
 		if (RTConfig.Tconstruct.iconModification && AbstractMaterialSectionTransformerHooks.isMaterialInShowItemMap(material)) {
 			displayTools.remove(0);
-			displayTools.add(new ElementTinkerItem(Main.MATERIAL_SHOW_ITEM_MAP.get(material.getIdentifier())));
+			displayTools.add(new ElementTinkerItem(TConstructManager.INSTANCE.getMaterialShowItemMap().get(material.getIdentifier())));
 		}
 	}
 

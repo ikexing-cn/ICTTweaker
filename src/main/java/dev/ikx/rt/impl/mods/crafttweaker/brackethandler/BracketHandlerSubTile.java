@@ -3,13 +3,12 @@ package dev.ikx.rt.impl.mods.crafttweaker.brackethandler;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.BracketHandler;
 import crafttweaker.zenscript.IBracketHandler;
-import dev.ikx.rt.Main;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.ISubTileEntityFunctionalRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.ISubTileEntityGeneratingRepresentation;
+import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
-import org.apache.commons.lang3.tuple.Pair;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.ExpressionCallStatic;
 import stanhebben.zenscript.expression.ExpressionString;
@@ -26,21 +25,18 @@ import java.util.List;
 public class BracketHandlerSubTile implements IBracketHandler {
 
     public static ISubTileEntityRepresentation getSubTile(String name) {
-        if (Main.SUB_TILE_GENERATING_MAP.containsKey(name)) {
-            Pair<String, ISubTileEntityRepresentation> subtilePair = Main.SUB_TILE_GENERATING_MAP.get(name);
-            return subtilePair.getValue();
+        if (BotaniaManager.INSTANCE.getSubTileEntityMap().containsKey(name)) {
+            return BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
         }
         return null;
     }
 
     public static ISubTileEntityFunctionalRepresentation getSubTileF(String name) {
-        Pair<String, ISubTileEntityRepresentation> subtilePair = Main.SUB_TILE_GENERATING_MAP.get(name);
-        return (ISubTileEntityFunctionalRepresentation) subtilePair.getValue();
+        return (ISubTileEntityFunctionalRepresentation) BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
     }
 
     public static ISubTileEntityGeneratingRepresentation getSubTileG(String name) {
-        Pair<String, ISubTileEntityRepresentation> subtilePair = Main.SUB_TILE_GENERATING_MAP.get(name);
-        return (ISubTileEntityGeneratingRepresentation) subtilePair.getValue();
+        return (ISubTileEntityGeneratingRepresentation) BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
     }
 
     @Override

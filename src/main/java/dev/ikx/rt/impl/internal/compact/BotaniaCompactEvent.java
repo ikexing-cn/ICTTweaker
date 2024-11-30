@@ -7,7 +7,7 @@ import dev.ikx.rt.impl.internal.config.RTConfig;
 import dev.ikx.rt.impl.mods.botania.module.SubTileOrechidManager;
 import dev.ikx.rt.impl.mods.botania.subtile.SubTileHydroangeasModified;
 import dev.ikx.rt.impl.mods.botania.subtile.SubTileOrechidModified;
-import dev.ikx.rt.impl.mods.contenttweaker.MCBotaniaContentEvent;
+import dev.ikx.rt.impl.mods.botania.event.CustomBotaniaEvent;
 import dev.ikx.rt.impl.mods.jei.JeiHydroangeas;
 import dev.ikx.rt.impl.mods.jei.JeiOrechid;
 import net.minecraft.init.Blocks;
@@ -33,7 +33,7 @@ public class BotaniaCompactEvent implements ICompactEvent {
     public void onConstruct(FMLConstructionEvent event) {
         MinecraftForge.EVENT_BUS.register(CTEventManager.Handler.class);
         if (Loader.isModLoaded("contenttweaker")) {
-            MinecraftForge.EVENT_BUS.register(MCBotaniaContentEvent.class);
+            MinecraftForge.EVENT_BUS.register(CustomBotaniaEvent.class);
         }
     }
 

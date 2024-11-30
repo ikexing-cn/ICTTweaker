@@ -1,14 +1,9 @@
 package dev.ikx.rt;
 
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
-import dev.ikx.rt.api.mods.botania.ICocoon;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.api.mods.jei.core.IJeiPanel;
 import dev.ikx.rt.api.mods.jei.core.IJeiRecipe;
 import dev.ikx.rt.impl.internal.compact.CompactManager;
 import dev.ikx.rt.impl.internal.proxy.IProxy;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -16,9 +11,9 @@ import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Mod(
         modid = Constant.MODID,
@@ -29,12 +24,6 @@ import java.util.*;
 public class Main {
     public static final Set<IJeiPanel> JEI_PANEL_SET = new HashSet<>();
     public static final Set<IJeiRecipe> JEI_RECIPE_SET = new HashSet<>();
-    public static final Map<String, ICocoon> CUSTOM_COCOONS_SPAWN = new HashMap<>();
-    public static final BiMap<String, Pair<String, ISubTileEntityRepresentation>> SUB_TILE_GENERATING_MAP = HashBiMap.create();
-
-    public static final List<String> HIDDEN_MATERIAL_LIST = new ArrayList<>();
-    public static final Map<String, Integer> MATERIAL_PRIORITY_MAP = new HashMap<>();
-    public static final Map<String, ItemStack> MATERIAL_SHOW_ITEM_MAP = new HashMap<>();
 
     @SidedProxy(clientSide = "dev.ikx.rt.impl.internal.proxy.ClientProxy", serverSide = "dev.ikx.rt.impl.internal.proxy.ServerProxy")
     public static IProxy proxy;
@@ -58,4 +47,5 @@ public class Main {
     public void onPostInit(FMLPostInitializationEvent event) {
         CompactManager.INSTANCE.registerPostInitEvent(event);
     }
+
 }

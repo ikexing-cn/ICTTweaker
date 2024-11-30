@@ -1,7 +1,7 @@
 package dev.ikx.rt.impl.internal.mixins.botania;
 
-import dev.ikx.rt.Main;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
+import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityFunctionalContent;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityGeneratingContent;
 import net.minecraft.nbt.NBTTagCompound;
@@ -43,10 +43,10 @@ public abstract class MixinTileSpecialFlower extends TileMod {
 
     @Inject(method = "provideSubTile", at = @At(value = "HEAD"), cancellable = true)
     protected void injectProvideSubTile(String name, CallbackInfo ci) {
-        for (Map.Entry<String, Pair<String, ISubTileEntityRepresentation>> entry : Main.SUB_TILE_GENERATING_MAP.entrySet()) {
+        for (Map.Entry<String, Pair<BotaniaManager.SubtileEntityType, ISubTileEntityRepresentation>> entry : BotaniaManager.INSTANCE.getSubTileEntityMap().entrySet()) {
             if (entry.getKey().equals(name)) {
                 subTileName = name;
-                if (entry.getValue().getKey().equals("generating")) {
+                if (entry.getValue().getKey() == BotaniaManager.SubtileEntityType.GENERATING) {
                     setSubTile(new MCSubTileEntityGeneratingContent(entry.getValue().getValue()));
                 } else {
                     setSubTile(new MCSubTileEntityFunctionalContent(entry.getValue().getValue()));
@@ -67,7 +67,7 @@ public abstract class MixinTileSpecialFlower extends TileMod {
             if (subTile == null || !BotaniaAPI.getSubTileStringMapping(subTile.getClass()).equals(subTileName))
                 provideSubTile(subTileName);
         } catch (NullPointerException e) {
-            if (!Main.SUB_TILE_GENERATING_MAP.containsKey(subTileName))
+            if (!BotaniaManager.INSTANCE.getSubTileEntityMap().containsKey(subTileName))
                 provideSubTile(subTileName);
         }
 

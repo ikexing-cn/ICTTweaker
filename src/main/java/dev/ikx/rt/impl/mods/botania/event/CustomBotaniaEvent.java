@@ -1,11 +1,11 @@
-package dev.ikx.rt.impl.mods.contenttweaker;
+package dev.ikx.rt.impl.mods.botania.event;
 
 import baubles.api.BaublesApi;
 import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import crafttweaker.CraftTweakerAPI;
-import dev.ikx.rt.Main;
 import dev.ikx.rt.api.internal.file.Props;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
+import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import dev.ikx.rt.impl.mods.contenttweaker.mana.bauble.MCManaBaubleContent;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,7 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-public class MCBotaniaContentEvent {
+public class CustomBotaniaEvent {
 
     public static String FLOWER_BLOCK_STATE = "{\n"
             + "  \"forge_marker\": 1,\n"
@@ -45,7 +45,7 @@ public class MCBotaniaContentEvent {
 
     @SubscribeEvent
     public static void onModelRegistry(ModelRegistryEvent event) {
-        for (Map.Entry<String, Pair<String, ISubTileEntityRepresentation>> entry : Main.SUB_TILE_GENERATING_MAP.entrySet()) {
+        for (Map.Entry<String, Pair<BotaniaManager.SubtileEntityType, ISubTileEntityRepresentation>> entry : BotaniaManager.INSTANCE.getSubTileEntityMap().entrySet()) {
             createFlowerBlockState(entry.getKey());
             BotaniaAPIClient.registerSubtileModel(entry.getKey(), new ModelResourceLocation(ContentTweaker.MOD_ID + ":" + entry.getKey()));
         }
