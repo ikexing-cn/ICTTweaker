@@ -12,7 +12,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 @SidedZenRegister(modDeps = "draconicevolution")
 @ZenClass(DraconicEvolutionFXHelper.ZEN_CLASS)
 public class DraconicEvolutionFXHelper {
-    public static final String ZEN_CLASS = "mods.randomtweaker.draconicevolution.IDraconicEvolutionFXHelper";
+    public static final String ZEN_CLASS = "mods.randomtweaker.draconicevolution.DraconicEvolutionFXHelper";
 
     @ZenMethod
     public static void spawnFX(int particleID, IVector3d pos, IVector3d speed, double viewRange, int... args) {

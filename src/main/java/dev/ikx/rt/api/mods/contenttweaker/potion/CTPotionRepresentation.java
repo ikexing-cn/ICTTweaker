@@ -17,7 +17,7 @@ import java.text.MessageFormat;
 @ZenClass(CTPotionRepresentation.ZEN_CLASS)
 public class CTPotionRepresentation {
 
-    public static final String ZEN_CLASS = "mods.randomtweaker.cote.IPotion";
+    public static final String ZEN_CLASS = "mods.randomtweaker.cote.Potion";
 
     public final int liquidColor;
     public final String unlocalizedName;
