@@ -1,6 +1,7 @@
-package dev.ikx.rt.impl.internal.compact;
+package dev.ikx.rt.impl.internal.compact.mods;
 
 import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
+import dev.ikx.rt.impl.internal.compact.ICompactEvent;
 import dev.ikx.rt.impl.mods.ftbultimine.event.FTBUltimineEvent;
 import dev.ikx.rt.impl.mods.ftbultimine.network.NetworkManager;
 import dev.ikx.rt.impl.internal.utils.InternalUtils;

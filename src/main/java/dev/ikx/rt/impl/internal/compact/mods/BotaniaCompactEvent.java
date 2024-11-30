@@ -1,8 +1,9 @@
-package dev.ikx.rt.impl.internal.compact;
+package dev.ikx.rt.impl.internal.compact.mods;
 
 import com.google.common.collect.BiMap;
 import crafttweaker.mods.jei.JEI;
 import dev.ikx.rt.api.mods.botania.event.CTEventManager;
+import dev.ikx.rt.impl.internal.compact.ICompactEvent;
 import dev.ikx.rt.impl.internal.config.RTConfig;
 import dev.ikx.rt.impl.mods.botania.module.SubTileOrechidManager;
 import dev.ikx.rt.impl.mods.botania.subtile.SubTileHydroangeasModified;

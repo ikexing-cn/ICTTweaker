@@ -5,7 +5,7 @@ import crafttweaker.annotations.BracketHandler;
 import crafttweaker.zenscript.IBracketHandler;
 import dev.ikx.rt.api.mods.contenttweaker.potion.CTPotionRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.potion.IPotionRepresentation;
-import dev.ikx.rt.impl.internal.event.EventRegister;
+import dev.ikx.rt.impl.mods.contenttweaker.potion.PotionRegisterEvent;
 import stanhebben.zenscript.compiler.IEnvironmentGlobal;
 import stanhebben.zenscript.expression.ExpressionCallStatic;
 import stanhebben.zenscript.expression.ExpressionString;
@@ -23,8 +23,8 @@ import java.util.List;
 public class BracketHandlerPotion implements IBracketHandler {
 
     public static CTPotionRepresentation getPotion(String name) {
-        if (EventRegister.POTION_MAP.containsKey(name)) {
-            return EventRegister.POTION_MAP.get(name).potionRepresentation;
+        if (PotionRegisterEvent.POTION_MAP.containsKey(name)) {
+            return PotionRegisterEvent.POTION_MAP.get(name).potionRepresentation;
         }
         return null;
     }

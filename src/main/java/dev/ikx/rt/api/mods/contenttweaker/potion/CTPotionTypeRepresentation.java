@@ -2,7 +2,7 @@ package dev.ikx.rt.api.mods.contenttweaker.potion;
 
 import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import crafttweaker.CraftTweakerAPI;
-import dev.ikx.rt.impl.internal.event.EventRegister;
+import dev.ikx.rt.impl.mods.contenttweaker.potion.PotionRegisterEvent;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionType;
 import stanhebben.zenscript.annotations.ZenClass;
@@ -42,8 +42,8 @@ public class CTPotionTypeRepresentation {
                 new PotionEffect(potion.getInternal(), duration, amplifier)
         ).setRegistryName(ContentTweaker.MOD_ID, unlocalizedName);
 
-        if (!EventRegister.POTION_TYPE_MAP.containsKey(unlocalizedName)) {
-            EventRegister.POTION_TYPE_MAP.put(unlocalizedName, potionType);
+        if (!PotionRegisterEvent.POTION_TYPE_MAP.containsKey(unlocalizedName)) {
+            PotionRegisterEvent.POTION_TYPE_MAP.put(unlocalizedName, potionType);
         } else {
             CraftTweakerAPI.getLogger().logError(
                     MessageFormat.format(

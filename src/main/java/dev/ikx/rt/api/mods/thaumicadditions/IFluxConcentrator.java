@@ -3,7 +3,7 @@ package dev.ikx.rt.api.mods.thaumicadditions;
 import crafttweaker.api.block.IBlockState;
 import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
-import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.mods.DeprecatedCompact;
 import stanhebben.zenscript.annotations.Optional;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;

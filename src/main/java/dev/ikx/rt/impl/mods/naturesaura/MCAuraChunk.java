@@ -4,7 +4,7 @@ import crafttweaker.api.world.IBlockPos;
 import crafttweaker.api.world.IWorld;
 import dev.ikx.rt.api.mods.naturesaura.CTAuraChunk;
 import dev.ikx.rt.api.mods.naturesaura.IAuraChunk;
-import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.mods.DeprecatedCompact;
 
 @Deprecated
 public class MCAuraChunk implements IAuraChunk {

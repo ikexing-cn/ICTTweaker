@@ -1,6 +1,6 @@
 package dev.ikx.rt.api.mods.contenttweaker.potion;
 
-import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.mods.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenGetter;
 import stanhebben.zenscript.annotations.ZenMethod;

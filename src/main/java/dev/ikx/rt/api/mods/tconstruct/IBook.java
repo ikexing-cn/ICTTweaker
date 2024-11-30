@@ -1,7 +1,7 @@
 package dev.ikx.rt.api.mods.tconstruct;
 
 import crafttweaker.api.item.IItemStack;
-import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.mods.DeprecatedCompact;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;

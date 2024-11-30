@@ -1,6 +1,7 @@
-package dev.ikx.rt.impl.internal.compact;
+package dev.ikx.rt.impl.internal.compact.mods;
 
 import dev.ikx.rt.api.mods.astralsorcery.event.CTEventManagerAS;
+import dev.ikx.rt.impl.internal.compact.ICompactEvent;
 import dev.ikx.rt.impl.mods.jei.JeiAttunements;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;

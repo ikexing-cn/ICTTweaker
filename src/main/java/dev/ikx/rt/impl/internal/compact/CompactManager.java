@@ -1,6 +1,7 @@
 package dev.ikx.rt.impl.internal.compact;
 
 import com.google.common.collect.Lists;
+import dev.ikx.rt.impl.internal.compact.mods.*;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -18,6 +19,7 @@ public class CompactManager {
             new AstralSorceryCompactEvent(),
             new BotaniaCompactEvent(),
             new CraftTweakerCompactEvent(),
+            new ContentTweakerCompactEvent(),
             new FTBUltimineCompactEvent(),
             new ThaumcraftCompactEvent(),
             new ThaumcraftCompactEvent.ThaumadditionsCompactEvent()

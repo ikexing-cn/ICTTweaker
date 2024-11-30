@@ -1,4 +1,4 @@
-package dev.ikx.rt.impl.internal.compact;
+package dev.ikx.rt.impl.internal.compact.mods;
 
 import crafttweaker.CraftTweakerAPI;
 

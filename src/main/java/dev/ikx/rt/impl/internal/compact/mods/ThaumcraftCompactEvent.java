@@ -1,4 +1,4 @@
-package dev.ikx.rt.impl.internal.compact;
+package dev.ikx.rt.impl.internal.compact.mods;
 
 import com.google.common.collect.Lists;
 import com.zeitheron.hammercore.utils.OnetimeCaller;
@@ -6,6 +6,7 @@ import crafttweaker.CraftTweakerAPI;
 import crafttweaker.api.block.IBlockState;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.api.mods.thaumicadditions.FluxConcentrator;
+import dev.ikx.rt.impl.internal.compact.ICompactEvent;
 import dev.ikx.rt.impl.mods.thaumcraft.DreamJournalEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -33,7 +34,7 @@ public class ThaumcraftCompactEvent implements ICompactEvent {
         CraftTweakerAPI.tweaker.loadScript(false, "thaumcraft");
     }
 
-    static class ThaumadditionsCompactEvent implements ICompactEvent {
+    public static class ThaumadditionsCompactEvent implements ICompactEvent {
         @Override
         public String modid() {
             return "thaumadditions";

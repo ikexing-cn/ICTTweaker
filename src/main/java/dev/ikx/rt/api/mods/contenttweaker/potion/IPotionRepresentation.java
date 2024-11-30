@@ -2,7 +2,7 @@ package dev.ikx.rt.api.mods.contenttweaker.potion;
 
 import dev.ikx.rt.api.mods.contenttweaker.function.IPotionIsReady;
 import dev.ikx.rt.api.mods.contenttweaker.function.IPotionPerformEffect;
-import dev.ikx.rt.impl.internal.compact.DeprecatedCompact;
+import dev.ikx.rt.impl.internal.compact.mods.DeprecatedCompact;
 import net.minecraft.potion.Potion;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenGetter;

@@ -3,7 +3,7 @@ package dev.ikx.rt.api.mods.contenttweaker.potion;
 import crafttweaker.CraftTweakerAPI;
 import dev.ikx.rt.api.mods.contenttweaker.function.IPotionIsReady;
 import dev.ikx.rt.api.mods.contenttweaker.function.IPotionPerformEffect;
-import dev.ikx.rt.impl.internal.event.EventRegister;
+import dev.ikx.rt.impl.mods.contenttweaker.potion.PotionRegisterEvent;
 import dev.ikx.rt.impl.mods.contenttweaker.potion.MCPotionContent;
 import net.minecraft.potion.Potion;
 import stanhebben.zenscript.annotations.ZenClass;
@@ -46,8 +46,8 @@ public class CTPotionRepresentation {
 
     @ZenMethod
     public void register() {
-        if (!EventRegister.POTION_MAP.containsKey(unlocalizedName)) {
-            EventRegister.POTION_MAP.put(unlocalizedName, new MCPotionContent(this));
+        if (!PotionRegisterEvent.POTION_MAP.containsKey(unlocalizedName)) {
+            PotionRegisterEvent.POTION_MAP.put(unlocalizedName, new MCPotionContent(this));
         } else {
             CraftTweakerAPI.getLogger().logError(MessageFormat.format(
                             "All Potion must be unique. Key: contenttweaker:{0} is not.", unlocalizedName)
@@ -56,7 +56,7 @@ public class CTPotionRepresentation {
     }
 
     public Potion getInternal() {
-        return EventRegister.POTION_MAP.get(unlocalizedName);
+        return PotionRegisterEvent.POTION_MAP.get(unlocalizedName);
     }
 
 }
