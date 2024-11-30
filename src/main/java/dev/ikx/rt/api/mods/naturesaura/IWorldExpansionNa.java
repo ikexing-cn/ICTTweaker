@@ -13,7 +13,7 @@ import stanhebben.zenscript.annotations.ZenMethod;
 @SidedZenRegister(modDeps = "naturesaura")
 @ZenExpansion("crafttweaker.world.IWorld")
 @ZenClass("mods.randomtweaker.naturesaura.IWorld")
-public abstract class IWorldExpansionNa {
+public class IWorldExpansionNa {
 
     @ZenMethod
     @Deprecated

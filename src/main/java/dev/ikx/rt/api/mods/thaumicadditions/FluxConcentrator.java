@@ -19,7 +19,7 @@ import java.util.Map;
 
 @SidedZenRegister(modDeps = "thaumadditions")
 @ZenClass(FluxConcentrator.ZEN_CLASS)
-public abstract class FluxConcentrator {
+public class FluxConcentrator {
 
     public static final String ZEN_CLASS = "mods.randomtweaker.thaumadditions.FluxConcentrator";
 

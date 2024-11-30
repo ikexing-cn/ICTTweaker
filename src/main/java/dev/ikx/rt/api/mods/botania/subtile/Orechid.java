@@ -19,7 +19,7 @@ import java.util.Objects;
 
 @SidedZenRegister(modDeps = "botania")
 @ZenClass(Orechid.ZEN_CLASS)
-public abstract class Orechid {
+public class Orechid {
 
     public static final String ZEN_CLASS = "mods.randomtweaker.botania.Orechid";
 

@@ -16,7 +16,7 @@ import java.util.stream.StreamSupport;
 @SidedZenRegister
 @ZenExpansion("crafttweaker.world.IBlockPos")
 @ZenClass("mods.randomtweaker.vanilla.IBlockPos")
-public abstract class IBlockPosExpansion {
+public class IBlockPosExpansion {
 
     @ZenMethodStatic
     public static IBlockPos[] getAllInBox(IBlockPos from, IBlockPos to) {
