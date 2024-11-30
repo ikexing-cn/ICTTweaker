@@ -1,7 +1,7 @@
 package dev.ikx.rt.impl.mods.ftbultimine.event;
 
 import dev.ikx.rt.Constant;
-import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
+import dev.ikx.rt.impl.mods.ftbultimine.capability.CapabilityRegistryHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;

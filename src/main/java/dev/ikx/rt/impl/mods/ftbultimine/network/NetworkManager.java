@@ -1,6 +1,6 @@
 package dev.ikx.rt.impl.mods.ftbultimine.network;
 
-import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
+import dev.ikx.rt.impl.mods.ftbultimine.capability.CapabilityRegistryHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;

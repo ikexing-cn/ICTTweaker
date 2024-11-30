@@ -1,7 +1,5 @@
-package dev.ikx.rt.impl.internal.capability;
+package dev.ikx.rt.impl.mods.ftbultimine.capability;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -10,6 +8,9 @@ import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.INBTSerializable;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class CapabilityRegistryHandler {
 

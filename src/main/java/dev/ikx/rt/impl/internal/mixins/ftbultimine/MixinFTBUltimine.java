@@ -2,8 +2,8 @@ package dev.ikx.rt.impl.internal.mixins.ftbultimine;
 
 import com.feed_the_beast.mods.ftbultimine.FTBUltimine;
 import dev.ikx.rt.api.mods.ftbultimine.IPlayerExpansionFTBU;
-import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
-import dev.ikx.rt.impl.internal.utils.InternalUtils;
+import dev.ikx.rt.impl.internal.compact.mods.FTBUltimineCompactEvent;
+import dev.ikx.rt.impl.mods.ftbultimine.capability.CapabilityRegistryHandler;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.world.BlockEvent;
@@ -29,7 +29,7 @@ public abstract class MixinFTBUltimine {
             ),
             cancellable = true)
     public void injectBlockBroken(BlockEvent.BreakEvent event, CallbackInfo ci) {
-        if (InternalUtils.isOpenFTBUltimineControl() && event.getPlayer() != null) {
+        if (FTBUltimineCompactEvent.isOpenFTBUltimineControl() && event.getPlayer() != null) {
             CapabilityRegistryHandler.FTBUltimineTag capability = event.getPlayer().getCapability(CapabilityRegistryHandler.FTB_ULTIMINE_CAPABILITY, null);
             if (!Objects.requireNonNull(capability).isAllow()) {
                 if (IPlayerExpansionFTBU.langKey != null) {

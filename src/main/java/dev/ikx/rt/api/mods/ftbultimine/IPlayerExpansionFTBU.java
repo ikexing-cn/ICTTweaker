@@ -5,8 +5,8 @@ import crafttweaker.IAction;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.player.IPlayer;
-import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
-import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler.FTBUltimineTag;
+import dev.ikx.rt.impl.mods.ftbultimine.capability.CapabilityRegistryHandler;
+import dev.ikx.rt.impl.mods.ftbultimine.capability.CapabilityRegistryHandler.FTBUltimineTag;
 import dev.ikx.rt.impl.mods.ftbultimine.network.NetworkManager;
 
 import net.minecraft.entity.player.EntityPlayer;

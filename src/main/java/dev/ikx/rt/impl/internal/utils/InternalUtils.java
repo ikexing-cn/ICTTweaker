@@ -3,19 +3,13 @@ package dev.ikx.rt.impl.internal.utils;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import dev.ikx.rt.impl.internal.capability.CapabilityRegistryHandler;
-import dev.ikx.rt.impl.internal.config.RTConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.common.Loader;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class InternalUtils {
@@ -69,17 +63,5 @@ public class InternalUtils {
         return !coll.isEmpty();
     }
 
-    public static boolean isOpenFTBUltimineControl() {
-        return Loader.isModLoaded("ftbultimine") && RTConfig.FTBUltimine.AllowCrTControl;
-    }
-
-    public static void decouplingMethod(CallbackInfo ci) {
-        if (InternalUtils.isOpenFTBUltimineControl()) {
-            CapabilityRegistryHandler.FTBUltimineTag capability = Minecraft.getMinecraft().player.getCapability(CapabilityRegistryHandler.FTB_ULTIMINE_CAPABILITY, null);
-            if (!Objects.requireNonNull(capability).isAllow()) {
-                ci.cancel();
-            }
-        }
-    }
 
 }
