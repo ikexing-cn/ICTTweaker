@@ -1,4 +1,4 @@
-package dev.ikx.rt.api.mods.contenttweaker.mana.bauble;
+package dev.ikx.rt.impl.mods.contenttweaker.bauble;
 
 import baubles.api.BaubleType;
 import baubles.api.BaublesApi;
@@ -7,7 +7,8 @@ import baubles.api.cap.BaublesCapabilities;
 import baubles.api.cap.IBaublesItemHandler;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.Main;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemContent;
+import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleRepresentation;
+import dev.ikx.rt.impl.mods.contenttweaker.item.CTManaItemContent;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;

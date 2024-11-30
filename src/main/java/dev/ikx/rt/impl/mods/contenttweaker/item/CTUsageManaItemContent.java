@@ -1,4 +1,4 @@
-package dev.ikx.rt.api.mods.contenttweaker.mana.item;
+package dev.ikx.rt.impl.mods.contenttweaker.item;
 
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.api.mods.contenttweaker.mana.item.tool.CTUsageManaItemRepresentation;

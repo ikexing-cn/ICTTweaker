@@ -1,7 +1,8 @@
-package dev.ikx.rt.api.mods.contenttweaker.mana.item;
+package dev.ikx.rt.impl.mods.contenttweaker.item;
 
 import com.teamacronymcoders.contenttweaker.modules.vanilla.items.ItemContent;
 import crafttweaker.api.minecraft.CraftTweakerMC;
+import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemRepresentation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;

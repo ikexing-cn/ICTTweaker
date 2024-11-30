@@ -4,7 +4,7 @@ import com.teamacronymcoders.base.registrysystem.ItemRegistry;
 import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IisUsesMana;
 import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTUsageManaItemContent;
+import dev.ikx.rt.impl.mods.contenttweaker.item.CTUsageManaItemContent;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;

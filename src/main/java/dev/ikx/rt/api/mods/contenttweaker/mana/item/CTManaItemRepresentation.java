@@ -6,6 +6,7 @@ import com.teamacronymcoders.contenttweaker.modules.vanilla.items.ItemRepresenta
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IGetEntityLifeSpan;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IManaWithItem;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IManaWithPool;
+import dev.ikx.rt.impl.mods.contenttweaker.item.CTManaItemContent;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;

@@ -5,7 +5,7 @@ import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.world.IBlockPos;
 import crafttweaker.api.world.IWorld;
 import dev.ikx.rt.api.mods.contenttweaker.mana.IManaItem;
-import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemContent;
+import dev.ikx.rt.impl.mods.contenttweaker.item.CTManaItemContent;
 import net.minecraft.item.ItemStack;
 import vazkii.botania.api.mana.ICreativeManaProvider;
 import vazkii.botania.api.mana.IManaUsingItem;

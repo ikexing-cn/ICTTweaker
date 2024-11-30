@@ -5,7 +5,7 @@ import crafttweaker.api.entity.IEntityLivingBase;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import dev.ikx.rt.api.mods.contenttweaker.mana.IManaBauble;
-import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleContent;
+import dev.ikx.rt.impl.mods.contenttweaker.bauble.CTManaBaubleContent;
 import dev.ikx.rt.impl.mods.contenttweaker.mana.item.MCManaItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

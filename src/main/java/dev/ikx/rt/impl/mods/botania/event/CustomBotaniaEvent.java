@@ -6,7 +6,7 @@ import crafttweaker.CraftTweakerAPI;
 import dev.ikx.rt.api.internal.file.Props;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
 import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
-import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleContent;
+import dev.ikx.rt.impl.mods.contenttweaker.bauble.CTManaBaubleContent;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

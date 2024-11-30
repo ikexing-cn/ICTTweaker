@@ -7,6 +7,8 @@ import dev.ikx.rt.api.mods.contenttweaker.function.mana.IBaubleFunctionWithRetur
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IBaubleRender;
 import dev.ikx.rt.api.mods.contenttweaker.function.mana.IGetBaubleType;
 import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemRepresentation;
+import dev.ikx.rt.impl.mods.contenttweaker.bauble.CTManaBaubleContent;
+import dev.ikx.rt.impl.mods.contenttweaker.bauble.CTManaTrinketContent;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;
