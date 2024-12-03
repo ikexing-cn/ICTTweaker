@@ -10,8 +10,8 @@ import stanhebben.zenscript.annotations.ZenProperty;
 
 
 @SidedZenRegister(modDeps = "jei")
-@ZenClass("mods.randomtweaker.jei.IJeiElement")
-public abstract class IJeiElement {
+@ZenClass("mods.randomtweaker.jei.JEIElement")
+public abstract class JEIElement {
 
     @ZenProperty
     public int u;
@@ -34,14 +34,14 @@ public abstract class IJeiElement {
     @ZenProperty
     public String elementName;
 
-    protected IJeiElement(int x, int y, int width, int height) {
+    protected JEIElement(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
 
-    protected IJeiElement(int u, int v, int x, int y, int width, int height) {
+    protected JEIElement(int u, int v, int x, int y, int width, int height) {
         this.u = u;
         this.v = v;
         this.x = x;
@@ -50,7 +50,7 @@ public abstract class IJeiElement {
         this.height = height;
     }
 
-    protected IJeiElement(String elementName, int x, int y, int width, int height) {
+    protected JEIElement(String elementName, int x, int y, int width, int height) {
         this.elementName = elementName;
 
         this.x = x;
@@ -59,7 +59,7 @@ public abstract class IJeiElement {
         this.height = height;
     }
 
-    protected IJeiElement(String elementName, int u, int v, int x, int y, int width, int height) {
+    protected JEIElement(String elementName, int u, int v, int x, int y, int width, int height) {
         this.elementName = elementName;
 
         this.u = u;

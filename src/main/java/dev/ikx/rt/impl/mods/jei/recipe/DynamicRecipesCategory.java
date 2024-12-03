@@ -1,9 +1,9 @@
 package dev.ikx.rt.impl.mods.jei.recipe;
 
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import dev.ikx.rt.api.mods.jei.slots.IJeiSlot;
-import dev.ikx.rt.api.mods.jei.slots.IJeiSlotItem;
-import dev.ikx.rt.api.mods.jei.slots.IJeiSlotLiquid;
+import dev.ikx.rt.api.mods.jei.slots.JEISlot;
+import dev.ikx.rt.api.mods.jei.slots.JEISlotItem;
+import dev.ikx.rt.api.mods.jei.slots.JEISlotLiquid;
 import dev.ikx.rt.impl.mods.jei.impl.core.MCJeiPanel;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
@@ -95,11 +95,11 @@ public class DynamicRecipesCategory implements IRecipeCategory<DynamicRecipesWra
         IGuiItemStackGroup group = recipeLayout.getItemStacks();
         IGuiFluidStackGroup fGroup = recipeLayout.getFluidStacks();
         for (int i = 0; i < panel.slots.size(); i++) {
-            IJeiSlot slot = panel.slots.get(i);
-            if (slot instanceof IJeiSlotItem) {
+            JEISlot slot = panel.slots.get(i);
+            if (slot instanceof JEISlotItem) {
                 group.init(i, slot.isInput, slot.x, slot.y);
             } else {
-                IJeiSlotLiquid f = ((IJeiSlotLiquid) slot);
+                JEISlotLiquid f = ((JEISlotLiquid) slot);
                 fGroup.init(i, f.isInput, f.x, f.y, f.width, f.height, f.capacityMb, f.showCapacity, null);
             }
         }

@@ -7,8 +7,8 @@ import stanhebben.zenscript.annotations.ZenProperty;
 
 
 @SidedZenRegister(modDeps = "jei")
-@ZenClass("mods.randomtweaker.jei.IJeiBackground")
-public abstract class IJeiBackground {
+@ZenClass("mods.randomtweaker.jei.JEIBackground")
+public class JEIBackground {
 
     @ZenProperty
     public int u;
@@ -25,7 +25,7 @@ public abstract class IJeiBackground {
     @ZenProperty
     public String resourceName;
 
-    protected IJeiBackground(int u, int v, int width, int height, String resourceName) {
+    public JEIBackground(int u, int v, int width, int height, String resourceName) {
         this.u = u;
         this.v = v;
         this.width = width;
@@ -33,7 +33,7 @@ public abstract class IJeiBackground {
         this.resourceName = resourceName;
     }
 
-    protected IJeiBackground(int width, int height) {
+    public JEIBackground(int width, int height) {
         this.width = width;
         this.height = height;
     }

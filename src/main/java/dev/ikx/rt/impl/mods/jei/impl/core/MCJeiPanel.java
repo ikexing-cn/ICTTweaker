@@ -7,11 +7,11 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.mc1120.brackets.BracketHandlerItem;
 import dev.ikx.rt.Constant;
 import dev.ikx.rt.Main;
-import dev.ikx.rt.api.mods.jei.core.IJeiBackground;
-import dev.ikx.rt.api.mods.jei.core.IJeiPanel;
-import dev.ikx.rt.api.mods.jei.core.IJeiTooltip;
-import dev.ikx.rt.api.mods.jei.elements.IJeiElement;
-import dev.ikx.rt.api.mods.jei.slots.IJeiSlot;
+import dev.ikx.rt.api.mods.jei.core.JEIBackground;
+import dev.ikx.rt.api.mods.jei.core.JEIPanel;
+import dev.ikx.rt.api.mods.jei.core.JEITooltip;
+import dev.ikx.rt.api.mods.jei.elements.JEIElement;
+import dev.ikx.rt.api.mods.jei.slots.JEISlot;
 import org.apache.commons.lang3.StringUtils;
 import youyihj.zenutils.api.reload.Reloadable;
 import youyihj.zenutils.api.util.ReflectionInvoked;
@@ -19,15 +19,16 @@ import youyihj.zenutils.api.util.ReflectionInvoked;
 import java.util.Arrays;
 import java.util.List;
 
-public class MCJeiPanel implements IJeiPanel {
+// TODO
+public class MCJeiPanel implements JEIPanel {
 
-    public final List<IJeiSlot> slots = Lists.newArrayList();
-    public final List<IJeiElement> elements = Lists.newArrayList();
+    public final List<JEISlot> slots = Lists.newArrayList();
+    public final List<JEIElement> elements = Lists.newArrayList();
     public final List<IItemStack> recipeCatalysts = Lists.newArrayList();
     public String uid;
     public String title;
-    public IJeiTooltip tooltip;
-    public IJeiBackground background;
+    public JEITooltip tooltip;
+    public JEIBackground background;
     public String modid = Constant.MODID;
     public IItemStack icon = BracketHandlerItem.getItem("minecraft:bedrock", 0);
 
@@ -37,86 +38,86 @@ public class MCJeiPanel implements IJeiPanel {
     }
 
     @Override
-    public IJeiPanel setModid(String modid) {
+    public JEIPanel setModid(String modid) {
         this.modid = modid;
         return this;
     }
 
     @Override
-    public IJeiPanel setIcon(IItemStack icon) {
+    public JEIPanel setIcon(IItemStack icon) {
         this.icon = icon;
         return this;
     }
 
     @Override
-    public IJeiPanel addSlot(IJeiSlot slot) {
+    public JEIPanel addSlot(JEISlot slot) {
         this.slots.add(slot);
         return this;
     }
 
     @Override
-    public IJeiPanel setSlots(IJeiSlot[] slots) {
+    public JEIPanel setSlots(JEISlot[] slots) {
         this.slots.clear();
         Arrays.stream(slots).forEach(this::addSlot);
         return this;
     }
 
     @Override
-    public IJeiPanel onTooltip(IJeiTooltip tooltip) {
+    public JEIPanel onTooltip(JEITooltip tooltip) {
         this.tooltip = tooltip;
         return this;
     }
 
     @Override
-    public IJeiPanel addElement(IJeiElement element) {
+    public JEIPanel addElement(JEIElement element) {
         this.elements.add(element);
         return this;
     }
 
     @Override
-    public IJeiPanel setElements(IJeiElement[] elements) {
+    public JEIPanel setElements(JEIElement[] elements) {
         this.elements.clear();
         Arrays.stream(elements).forEach(this::addElement);
         return this;
     }
 
     @Override
-    public IJeiPanel addRecipeCatalyst(IItemStack stack) {
+    public JEIPanel addRecipeCatalyst(IItemStack stack) {
         this.recipeCatalysts.add(stack);
         return this;
     }
 
     @Override
-    public IJeiPanel setRecipeCatalysts(IItemStack[] stacks) {
+    public JEIPanel setRecipeCatalysts(IItemStack[] stacks) {
         this.recipeCatalysts.clear();
         Arrays.stream(stacks).forEach(this::addRecipeCatalyst);
         return this;
     }
 
     @Override
-    public IJeiPanel setBackground(IJeiBackground background) {
+    public JEIPanel setBackground(JEIBackground background) {
         this.background = background;
         return this;
     }
 
     @Override
-    public IJeiSlot[] getJeiSlots() {
-        return this.slots.toArray(new IJeiSlot[0]);
+    public JEISlot[] getJeiSlots() {
+        return this.slots.toArray(new JEISlot[0]);
     }
 
     @Override
-    public IJeiSlot getJeiSlot(String slotName) {
+    public JEISlot getJeiSlot(String slotName) {
         if (StringUtils.isBlank(slotName)) return null;
         return this.slots.stream().filter(s -> s.slotName.equals(slotName)).findFirst().orElse(null);
     }
 
     @Override
-    public IJeiElement[] getJeiElements() {
-        return this.elements.toArray(new IJeiElement[0]);
+    public JEIElement[] getJeiElements() {
+        return this.elements.toArray(new JEIElement[0]);
     }
 
     @Override
-    public IJeiElement getJeiElement(String elementName) {
+    public JEIElement getJeiElement(String elementName) {
         if (StringUtils.isBlank(elementName)) return null;
         return this.elements.stream().filter(e -> e.elementName.equals(elementName)).findFirst().orElse(null);
     }
@@ -142,7 +143,7 @@ public class MCJeiPanel implements IJeiPanel {
     }
 
     @Override
-    public void register_() {
+    public void registerDirect() {
         Main.JEI_PANEL_SET.add(this);
     }
 

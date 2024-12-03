@@ -1,7 +1,7 @@
 package dev.ikx.rt;
 
-import dev.ikx.rt.api.mods.jei.core.IJeiPanel;
-import dev.ikx.rt.api.mods.jei.core.IJeiRecipe;
+import dev.ikx.rt.api.mods.jei.core.JEIPanel;
+import dev.ikx.rt.api.mods.jei.core.JEIRecipe;
 import dev.ikx.rt.impl.internal.compact.CompactManager;
 import dev.ikx.rt.impl.internal.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -22,8 +22,8 @@ import java.util.Set;
         dependencies = Constant.DESPENDENCIES
 )
 public class Main {
-    public static final Set<IJeiPanel> JEI_PANEL_SET = new HashSet<>();
-    public static final Set<IJeiRecipe> JEI_RECIPE_SET = new HashSet<>();
+    public static final Set<JEIPanel> JEI_PANEL_SET = new HashSet<>();
+    public static final Set<JEIRecipe> JEI_RECIPE_SET = new HashSet<>();
 
     @SidedProxy(clientSide = "dev.ikx.rt.impl.internal.proxy.ClientProxy", serverSide = "dev.ikx.rt.impl.internal.proxy.ServerProxy")
     public static IProxy proxy;

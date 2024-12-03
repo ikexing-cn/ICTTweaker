@@ -9,8 +9,8 @@ import dev.ikx.rt.impl.mods.botania.module.SubTileOrechidManager;
 import dev.ikx.rt.impl.mods.botania.subtile.SubTileHydroangeasModified;
 import dev.ikx.rt.impl.mods.botania.subtile.SubTileOrechidModified;
 import dev.ikx.rt.impl.mods.botania.event.CustomBotaniaEvent;
-import dev.ikx.rt.impl.mods.jei.JeiHydroangeas;
-import dev.ikx.rt.impl.mods.jei.JeiOrechid;
+import dev.ikx.rt.impl.mods.jei.JEIHydroangeas;
+import dev.ikx.rt.impl.mods.jei.JEIOrechid;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -60,14 +60,14 @@ public class BotaniaCompactEvent implements ICompactEvent {
             if (Objects.nonNull(subTiles)) {
                 if (RTConfig.Botania.OrechidModified) {
                     if (Loader.isModLoaded("jei")) {
-                        JeiOrechid.init();
+                        JEIOrechid.init();
                         JEI.hideCategory("botania.orechid");
                     }
                     subTiles.forcePut(LibBlockNames.SUBTILE_ORECHID, SubTileOrechidModified.class);
                 }
                 if (RTConfig.Botania.HydroangeasModified) {
                     if (Loader.isModLoaded("jei")) {
-                        JeiHydroangeas.init();
+                        JEIHydroangeas.init();
                     }
                     subTiles.forcePut(LibBlockNames.SUBTILE_HYDROANGEAS, SubTileHydroangeasModified.class);
                 }

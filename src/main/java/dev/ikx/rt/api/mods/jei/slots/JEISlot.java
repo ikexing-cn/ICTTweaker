@@ -10,8 +10,8 @@ import stanhebben.zenscript.annotations.ZenProperty;
 
 
 @SidedZenRegister(modDeps = "jei")
-@ZenClass("mods.randomtweaker.jei.IJeiSlot")
-public abstract class IJeiSlot {
+@ZenClass("mods.randomtweaker.jei.JEISlot")
+public abstract class JEISlot {
 
     @ZenProperty
     public int x;
@@ -28,14 +28,14 @@ public abstract class IJeiSlot {
     @ZenProperty
     public String slotName;
 
-    protected IJeiSlot(int x, int y, boolean isInput, boolean hasBase) {
+    protected JEISlot(int x, int y, boolean isInput, boolean hasBase) {
         this.x = x;
         this.y = y;
         this.isInput = isInput;
         this.hasBase = hasBase;
     }
 
-    protected IJeiSlot(String slotName, int x, int y, boolean isInput, boolean hasBase) {
+    protected JEISlot(String slotName, int x, int y, boolean isInput, boolean hasBase) {
         this.slotName = slotName;
 
         this.x = x;

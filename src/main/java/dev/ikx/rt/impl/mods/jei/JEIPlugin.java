@@ -12,7 +12,6 @@ import mezz.jei.Internal;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.ISubtypeRegistry;
-import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import mezz.jei.gui.GuiHelper;
 import net.minecraft.item.Item;
@@ -21,9 +20,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@JEIPlugin
+@mezz.jei.api.JEIPlugin
 @ParametersAreNonnullByDefault
-public class JeiPlugin implements IModPlugin {
+public class JEIPlugin implements IModPlugin {
 
     public static List<Item> subtypesToRegister = Lists.newArrayList();
     public static final String DEFAULT_TEXTURE = "randomtweaker:textures/gui/jei/jei_default.png";
@@ -48,7 +47,8 @@ public class JeiPlugin implements IModPlugin {
                     .filter(r -> r.getUid().equals(panel.uid))
                     .map(r -> (MCJeiRecipe) r)
                     .collect(Collectors.toList());
-            if (panel.uid.equals(JeiAttunements.UID)) {
+
+            if (panel.uid.equals(JEIAttunements.UID)) {
                 registry.addRecipes(recipeList.stream().map(AttunementRecipeWarpper::new).collect(Collectors.toList()), panel.uid);
             } else {
                 registry.addRecipes(recipeList.stream().map(DynamicRecipesWrapper::new).collect(Collectors.toList()), panel.uid);

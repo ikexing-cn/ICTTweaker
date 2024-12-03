@@ -7,8 +7,8 @@ import stanhebben.zenscript.annotations.ZenClass;
 
 @SidedZenRegister(modDeps = "jei")
 @FunctionalInterface
-@ZenClass("mods.randomtweaker.jei.IJeiTooltip")
-public interface IJeiTooltip {
+@ZenClass("mods.randomtweaker.jei.JEITooltip")
+public interface JEITooltip {
 
     String[] action(int mouseX, int mouseY);
 

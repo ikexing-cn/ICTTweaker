@@ -5,9 +5,9 @@ import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.api.item.IIngredient;
 import dev.ikx.rt.Main;
-import dev.ikx.rt.api.mods.jei.core.IJeiRecipe;
-import dev.ikx.rt.api.mods.jei.core.IJeiTooltip;
-import dev.ikx.rt.api.mods.jei.elements.IJeiElement;
+import dev.ikx.rt.api.mods.jei.core.JEIRecipe;
+import dev.ikx.rt.api.mods.jei.core.JEITooltip;
+import dev.ikx.rt.api.mods.jei.elements.JEIElement;
 import youyihj.zenutils.api.reload.Reloadable;
 import youyihj.zenutils.api.util.ReflectionInvoked;
 
@@ -16,59 +16,60 @@ import java.util.List;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-public class MCJeiRecipe implements IJeiRecipe {
+// TODO
+public class MCJeiRecipe implements JEIRecipe {
 
     public final List<IIngredient> inputs = Lists.newArrayList();
     public final List<IIngredient> outputs = Lists.newArrayList();
-    public final List<IJeiElement> elements = Lists.newArrayList();
+    public final List<JEIElement> elements = Lists.newArrayList();
     public String uid;
-    public IJeiTooltip tooltip;
+    public JEITooltip tooltip;
 
     public MCJeiRecipe(String uid) {
         this.uid = uid;
     }
 
     @Override
-    public IJeiRecipe setInputs(IIngredient[] inputs) {
+    public JEIRecipe setInputs(IIngredient[] inputs) {
         this.inputs.clear();
         Arrays.stream(inputs).forEach(this::addInput);
         return this;
     }
 
     @Override
-    public IJeiRecipe setOutputs(IIngredient[] outputs) {
+    public JEIRecipe setOutputs(IIngredient[] outputs) {
         this.outputs.clear();
         Arrays.stream(outputs).forEach(this::addOutput);
         return this;
     }
 
     @Override
-    public IJeiRecipe setElements(IJeiElement[] elements) {
+    public JEIRecipe setElements(JEIElement[] elements) {
         this.elements.clear();
         Arrays.stream(elements).forEach(this::addElement);
         return this;
     }
 
     @Override
-    public IJeiRecipe addInput(IIngredient input) {
+    public JEIRecipe addInput(IIngredient input) {
         this.inputs.add(input);
         return this;
     }
 
     @Override
-    public IJeiRecipe addOutput(IIngredient output) {
+    public JEIRecipe addOutput(IIngredient output) {
         this.outputs.add(output);
         return this;
     }
 
     @Override
-    public IJeiRecipe addElement(IJeiElement element) {
+    public JEIRecipe addElement(JEIElement element) {
         this.elements.add(element);
         return this;
     }
 
     @Override
-    public IJeiRecipe onJEITooltip(IJeiTooltip tooltip) {
+    public JEIRecipe onJEITooltip(JEITooltip tooltip) {
         this.tooltip = tooltip;
         return this;
     }
@@ -79,7 +80,7 @@ public class MCJeiRecipe implements IJeiRecipe {
     }
 
     @Override
-    public void build_() {
+    public void buildDirect() {
         Main.JEI_RECIPE_SET.add(this);
     }
 
