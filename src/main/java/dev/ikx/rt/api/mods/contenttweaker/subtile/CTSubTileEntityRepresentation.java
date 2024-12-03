@@ -12,7 +12,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 @SidedZenRegister(modDeps = {"contenttweaker", "botania"})
 @ZenClass("mods.randomtweaker.cote.ISubTileEntity")
-public abstract class ISubTileEntityRepresentation {
+public class CTSubTileEntityRepresentation {
 
     @ZenProperty
     public int color;
@@ -39,7 +39,7 @@ public abstract class ISubTileEntityRepresentation {
     @ZenProperty
     public BlockActivated onBlockActivated;
 
-    protected ISubTileEntityRepresentation(int color, String unlocalizedName) {
+    protected CTSubTileEntityRepresentation(int color, String unlocalizedName) {
         this.color = color;
         this.unlocalizedName = unlocalizedName;
     }
@@ -57,7 +57,7 @@ public abstract class ISubTileEntityRepresentation {
         }
     }
 
-    protected void registerMini(ISubTileEntityRepresentation subtile) {
+    protected void registerMini(CTSubTileEntityRepresentation subtile) {
         BotaniaManager.INSTANCE.registerSubtileEntity(unlocalizedName + "Chibi", BotaniaManager.SubtileEntityType.FUNCTIONAL, subtile);
 
         BotaniaAPI.subtilesForCreativeMenu.add(unlocalizedName + "Chibi");

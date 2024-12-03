@@ -9,8 +9,8 @@ import com.teamacronymcoders.contenttweaker.api.ctobjects.world.MCWorld;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.world.IBlockPos;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityInGame;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.ISubTileEntityGeneratingRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.CTSubTileEntityRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.CTSubTileEntityGeneratingRepresentation;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,10 +29,10 @@ import java.util.Objects;
 
 public class MCSubTileEntityGeneratingContent extends SubTileGenerating implements ISubTileEntityInGame {
 
-    public final ISubTileEntityRepresentation subtile;
+    public final CTSubTileEntityRepresentation subtile;
     private final TileData customData = new TileData();
 
-    public MCSubTileEntityGeneratingContent(ISubTileEntityRepresentation subtile) {
+    public MCSubTileEntityGeneratingContent(CTSubTileEntityRepresentation subtile) {
         this.subtile = subtile;
     }
 
@@ -43,7 +43,7 @@ public class MCSubTileEntityGeneratingContent extends SubTileGenerating implemen
 
     @Override
     public boolean canGeneratePassively() {
-        ISubTileEntityGeneratingRepresentation subtile = (ISubTileEntityGeneratingRepresentation) this.subtile;
+        CTSubTileEntityGeneratingRepresentation subtile = (CTSubTileEntityGeneratingRepresentation) this.subtile;
         return Objects.nonNull(subtile.canGeneratePassively) && subtile.canGeneratePassively.call(new MCBlockPos(getPos()), new MCWorld(getWorld()));
     }
 
@@ -74,7 +74,7 @@ public class MCSubTileEntityGeneratingContent extends SubTileGenerating implemen
 
     @Override
     public boolean isPassiveFlower() {
-        ISubTileEntityGeneratingRepresentation subtile = (ISubTileEntityGeneratingRepresentation) this.subtile;
+        CTSubTileEntityGeneratingRepresentation subtile = (CTSubTileEntityGeneratingRepresentation) this.subtile;
         return subtile.passiveFlower;
     }
 
@@ -100,13 +100,13 @@ public class MCSubTileEntityGeneratingContent extends SubTileGenerating implemen
 
     @Override
     public int getDelayBetweenPassiveGeneration() {
-        ISubTileEntityGeneratingRepresentation subtile = (ISubTileEntityGeneratingRepresentation) this.subtile;
+        CTSubTileEntityGeneratingRepresentation subtile = (CTSubTileEntityGeneratingRepresentation) this.subtile;
         return subtile.delayBetweenPassiveGeneration;
     }
 
     @Override
     public int getValueForPassiveGeneration() {
-        ISubTileEntityGeneratingRepresentation subtile = (ISubTileEntityGeneratingRepresentation) this.subtile;
+        CTSubTileEntityGeneratingRepresentation subtile = (CTSubTileEntityGeneratingRepresentation) this.subtile;
         return subtile.valueForPassiveGeneration;
     }
 
@@ -126,7 +126,7 @@ public class MCSubTileEntityGeneratingContent extends SubTileGenerating implemen
 
     @Override
     public boolean shouldSyncPassiveGeneration() {
-        ISubTileEntityGeneratingRepresentation subtile = (ISubTileEntityGeneratingRepresentation) this.subtile;
+        CTSubTileEntityGeneratingRepresentation subtile = (CTSubTileEntityGeneratingRepresentation) this.subtile;
         return subtile.shouldSyncPassiveGeneration;
     }
 
@@ -176,7 +176,7 @@ public class MCSubTileEntityGeneratingContent extends SubTileGenerating implemen
     @Override
     public void populateDropStackNBTs(List<ItemStack> drops) {
         super.populateDropStackNBTs(drops);
-        ISubTileEntityGeneratingRepresentation subtile = (ISubTileEntityGeneratingRepresentation) this.subtile;
+        CTSubTileEntityGeneratingRepresentation subtile = (CTSubTileEntityGeneratingRepresentation) this.subtile;
         if (Objects.nonNull(subtile.populateDropStackNBTs)) {
             subtile.populateDropStackNBTs.call(CraftTweakerMC.getIItemStacks(drops.toArray(new ItemStack[0])));
         }

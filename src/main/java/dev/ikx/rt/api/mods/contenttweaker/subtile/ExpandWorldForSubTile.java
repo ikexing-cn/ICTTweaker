@@ -14,7 +14,7 @@ import vazkii.botania.api.subtile.SubTileEntity;
 
 @SidedZenRegister(modDeps = {"contenttweaker", "botania"})
 @ZenExpansion("crafttweaker.world.IWorld")
-public abstract class ExpandWorldForSubTile {
+public class ExpandWorldForSubTile {
 
     @ZenMethod
     public static ISubTileEntityInGame getSubTileEntityInGame(IWorld world, IBlockPos pos) {

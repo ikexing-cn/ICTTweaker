@@ -3,21 +3,19 @@ package dev.ikx.rt.api.mods.contenttweaker;
 import dev.ikx.rt.api.mods.contenttweaker.mana.bauble.CTManaBaubleRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.mana.item.CTManaItemRepresentation;
 import dev.ikx.rt.api.mods.contenttweaker.mana.item.tool.CTUsageManaItemRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.ISubTileEntityFunctionalRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.ISubTileEntityGeneratingRepresentation;
-import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityRepresentation;
-import youyihj.zenutils.api.zenscript.SidedZenRegister;
-
+import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.CTSubTileEntityFunctionalRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.CTSubTileEntityGeneratingRepresentation;
 import stanhebben.zenscript.annotations.Optional;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethodStatic;
+import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 
 @SidedZenRegister(modDeps = {"botania", "contenttweaker"})
 @ZenExpansion("mods.contenttweaker.VanillaFactory")
 @ZenClass("mods.randomtweaker.cote.VanillaFactoryExpansionWithBotania")
-public abstract class ExpandVanillaFactoryWithBotania {
+public class ExpandVanillaFactoryWithBotania {
 
     @ZenMethodStatic
     public static CTManaItemRepresentation createManaItem(String unlocalizedName, @Optional(valueLong = 500000) int maxMana) {
@@ -35,13 +33,13 @@ public abstract class ExpandVanillaFactoryWithBotania {
     }
 
     @ZenMethodStatic
-    public static ISubTileEntityGeneratingRepresentation createSubTileGenerating(String unlocalizedName, @Optional int color) {
-        return new MCSubTileEntityRepresentation.MCSubTileEntityGeneratingRepresentation(color, unlocalizedName);
+    public static CTSubTileEntityGeneratingRepresentation createSubTileGenerating(String unlocalizedName, @Optional int color) {
+        return new CTSubTileEntityGeneratingRepresentation(color, unlocalizedName);
     }
 
     @ZenMethodStatic
-    public static ISubTileEntityFunctionalRepresentation createSubTileFunctional(String unlocalizedName, @Optional int color) {
-        return new MCSubTileEntityRepresentation.MCSubTileEntityFunctionalRepresentation(color, unlocalizedName);
+    public static CTSubTileEntityFunctionalRepresentation createSubTileFunctional(String unlocalizedName, @Optional int color) {
+        return new CTSubTileEntityFunctionalRepresentation(color, unlocalizedName);
     }
 
 }

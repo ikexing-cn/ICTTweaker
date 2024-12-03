@@ -1,6 +1,6 @@
 package dev.ikx.rt.impl.internal.mixins.botania;
 
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.CTSubTileEntityRepresentation;
 import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityFunctionalContent;
 import dev.ikx.rt.impl.mods.contenttweaker.subtile.MCSubTileEntityGeneratingContent;
@@ -43,7 +43,7 @@ public abstract class MixinTileSpecialFlower extends TileMod {
 
     @Inject(method = "provideSubTile", at = @At(value = "HEAD"), cancellable = true)
     protected void injectProvideSubTile(String name, CallbackInfo ci) {
-        for (Map.Entry<String, Pair<BotaniaManager.SubtileEntityType, ISubTileEntityRepresentation>> entry : BotaniaManager.INSTANCE.getSubTileEntityMap().entrySet()) {
+        for (Map.Entry<String, Pair<BotaniaManager.SubtileEntityType, CTSubTileEntityRepresentation>> entry : BotaniaManager.INSTANCE.getSubTileEntityMap().entrySet()) {
             if (entry.getKey().equals(name)) {
                 subTileName = name;
                 if (entry.getValue().getKey() == BotaniaManager.SubtileEntityType.GENERATING) {

@@ -13,7 +13,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 @SidedZenRegister(modDeps = "contenttweaker")
 @ZenExpansion("mods.contenttweaker.VanillaFactory")
 @ZenClass("mods.randomtweaker.cote.VanillaFactoryExpansion")
-public abstract class ExpandVanillaFactory {
+public class ExpandVanillaFactory {
 
     @Deprecated
     @ZenMethodStatic

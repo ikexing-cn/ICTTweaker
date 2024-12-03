@@ -3,9 +3,9 @@ package dev.ikx.rt.impl.mods.crafttweaker.brackethandler;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.BracketHandler;
 import crafttweaker.zenscript.IBracketHandler;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.ISubTileEntityFunctionalRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.ISubTileEntityGeneratingRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.CTSubTileEntityRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.CTSubTileEntityFunctionalRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.generating.CTSubTileEntityGeneratingRepresentation;
 import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
@@ -24,19 +24,19 @@ import java.util.List;
 
 public class BracketHandlerSubTile implements IBracketHandler {
 
-    public static ISubTileEntityRepresentation getSubTile(String name) {
+    public static CTSubTileEntityRepresentation getSubTile(String name) {
         if (BotaniaManager.INSTANCE.getSubTileEntityMap().containsKey(name)) {
             return BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
         }
         return null;
     }
 
-    public static ISubTileEntityFunctionalRepresentation getSubTileF(String name) {
-        return (ISubTileEntityFunctionalRepresentation) BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
+    public static CTSubTileEntityFunctionalRepresentation getSubTileF(String name) {
+        return (CTSubTileEntityFunctionalRepresentation) BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
     }
 
-    public static ISubTileEntityGeneratingRepresentation getSubTileG(String name) {
-        return (ISubTileEntityGeneratingRepresentation) BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
+    public static CTSubTileEntityGeneratingRepresentation getSubTileG(String name) {
+        return (CTSubTileEntityGeneratingRepresentation) BotaniaManager.INSTANCE.getSubTileEntity(name).getValue();
     }
 
     @Override
@@ -56,15 +56,15 @@ public class BracketHandlerSubTile implements IBracketHandler {
 
     @Override
     public Class<?> getReturnedClass() {
-        return ISubTileEntityRepresentation.class;
+        return CTSubTileEntityRepresentation.class;
     }
 
     private IZenSymbol find(IEnvironmentGlobal environment, List<Token> tokens) {
         String name = tokens.get(2).getValue();
         IJavaMethod method;
-        if (getSubTile(name) instanceof ISubTileEntityGeneratingRepresentation) {
+        if (getSubTile(name) instanceof CTSubTileEntityGeneratingRepresentation) {
             method = CraftTweakerAPI.getJavaMethod(BracketHandlerSubTile.class, "getSubTileG", String.class);
-        } else if (getSubTile(name) instanceof ISubTileEntityFunctionalRepresentation) {
+        } else if (getSubTile(name) instanceof CTSubTileEntityFunctionalRepresentation) {
             method = CraftTweakerAPI.getJavaMethod(BracketHandlerSubTile.class, "getSubTileF", String.class);
         } else {
             method = null;

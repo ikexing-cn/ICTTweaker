@@ -4,7 +4,7 @@ import baubles.api.BaublesApi;
 import com.teamacronymcoders.contenttweaker.ContentTweaker;
 import crafttweaker.CraftTweakerAPI;
 import dev.ikx.rt.api.internal.file.Props;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.CTSubTileEntityRepresentation;
 import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import dev.ikx.rt.impl.mods.contenttweaker.bauble.CTManaBaubleContent;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -45,7 +45,7 @@ public class CustomBotaniaEvent {
 
     @SubscribeEvent
     public static void onModelRegistry(ModelRegistryEvent event) {
-        for (Map.Entry<String, Pair<BotaniaManager.SubtileEntityType, ISubTileEntityRepresentation>> entry : BotaniaManager.INSTANCE.getSubTileEntityMap().entrySet()) {
+        for (Map.Entry<String, Pair<BotaniaManager.SubtileEntityType, CTSubTileEntityRepresentation>> entry : BotaniaManager.INSTANCE.getSubTileEntityMap().entrySet()) {
             createFlowerBlockState(entry.getKey());
             BotaniaAPIClient.registerSubtileModel(entry.getKey(), new ModelResourceLocation(ContentTweaker.MOD_ID + ":" + entry.getKey()));
         }

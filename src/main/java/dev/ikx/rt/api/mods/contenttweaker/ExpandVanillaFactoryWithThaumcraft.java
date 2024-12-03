@@ -10,7 +10,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 @SidedZenRegister(modDeps = {"thaumcraft", "contenttweaker"})
 @ZenExpansion("mods.contenttweaker.VanillaFactory")
 @ZenClass("mods.randomtweaker.cote.VanillaFactoryExpansionWithThaumcraft")
-public abstract class ExpandVanillaFactoryWithThaumcraft {
+public class ExpandVanillaFactoryWithThaumcraft {
 
     @ZenMethodStatic
     public static CTAspectRepresentation createAspect(String tag, int color) {

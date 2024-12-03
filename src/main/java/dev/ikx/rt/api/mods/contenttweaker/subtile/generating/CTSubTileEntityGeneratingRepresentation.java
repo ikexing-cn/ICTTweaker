@@ -2,7 +2,7 @@ package dev.ikx.rt.api.mods.contenttweaker.subtile.generating;
 
 import dev.ikx.rt.api.mods.contenttweaker.function.subtile.CanGeneratePassively;
 import dev.ikx.rt.api.mods.contenttweaker.function.subtile.PopulateDropStackNBTs;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.CTSubTileEntityRepresentation;
 import dev.ikx.rt.impl.mods.botania.module.BotaniaManager;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
@@ -11,7 +11,7 @@ import youyihj.zenutils.api.zenscript.SidedZenRegister;
 
 @SidedZenRegister(modDeps = {"contenttweaker", "botania"})
 @ZenClass("mods.randomtweaker.cote.ISubTileEntityGenerating")
-public abstract class ISubTileEntityGeneratingRepresentation extends ISubTileEntityRepresentation {
+public class CTSubTileEntityGeneratingRepresentation extends CTSubTileEntityRepresentation {
 
     private static final BotaniaManager.SubtileEntityType TYPE_NAME = BotaniaManager.SubtileEntityType.GENERATING;
 
@@ -28,7 +28,7 @@ public abstract class ISubTileEntityGeneratingRepresentation extends ISubTileEnt
     @ZenProperty
     public CanGeneratePassively canGeneratePassively;
 
-    protected ISubTileEntityGeneratingRepresentation(int color, String unlocalizedName) {
+    public CTSubTileEntityGeneratingRepresentation(int color, String unlocalizedName) {
         super(color, unlocalizedName);
     }
 

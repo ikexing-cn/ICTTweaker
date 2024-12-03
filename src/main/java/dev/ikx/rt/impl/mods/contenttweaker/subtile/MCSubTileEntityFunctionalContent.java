@@ -9,8 +9,8 @@ import com.teamacronymcoders.contenttweaker.api.ctobjects.world.MCWorld;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import crafttweaker.api.world.IBlockPos;
 import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityInGame;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.ISubTileEntityRepresentation;
-import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.ISubTileEntityFunctionalRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.CTSubTileEntityRepresentation;
+import dev.ikx.rt.api.mods.contenttweaker.subtile.functional.CTSubTileEntityFunctionalRepresentation;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,10 +28,10 @@ import java.util.Objects;
 
 public class MCSubTileEntityFunctionalContent extends SubTileFunctional implements ISubTileEntityInGame {
 
-    public final ISubTileEntityRepresentation subtile;
+    public final CTSubTileEntityRepresentation subtile;
     private final TileData customData = new TileData();
 
-    public MCSubTileEntityFunctionalContent(ISubTileEntityRepresentation subtile) {
+    public MCSubTileEntityFunctionalContent(CTSubTileEntityRepresentation subtile) {
         this.subtile = subtile;
     }
 
@@ -199,13 +199,13 @@ public class MCSubTileEntityFunctionalContent extends SubTileFunctional implemen
 
     public static class Mini extends MCSubTileEntityFunctionalContent {
 
-        public Mini(ISubTileEntityRepresentation subtile) {
+        public Mini(CTSubTileEntityRepresentation subtile) {
             super(subtile);
         }
 
         @Override
         public RadiusDescriptor getRadius() {
-            return new RadiusDescriptor.Square(toBlockPos(), ((ISubTileEntityFunctionalRepresentation) subtile).miniRange);
+            return new RadiusDescriptor.Square(toBlockPos(), ((CTSubTileEntityFunctionalRepresentation) subtile).miniRange);
         }
 
         @Override

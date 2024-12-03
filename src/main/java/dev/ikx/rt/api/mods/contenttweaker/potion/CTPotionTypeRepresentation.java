@@ -14,7 +14,7 @@ import java.text.MessageFormat;
 
 
 @SidedZenRegister(modDeps = "contenttweaker")
-@ZenClass(CTPotionRepresentation.ZEN_CLASS)
+@ZenClass(CTPotionTypeRepresentation.ZEN_CLASS)
 public class CTPotionTypeRepresentation {
 
     public static final String ZEN_CLASS = "mods.randomtweaker.cote.PotionType";
