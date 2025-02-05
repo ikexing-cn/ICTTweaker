@@ -1,7 +1,9 @@
 package ink.ikx.rt.impl.mods.jei.recipe;
 
+import com.google.common.base.Predicates;
 import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.liquid.ILiquidStack;
 import ink.ikx.rt.impl.internal.utils.InternalUtils;
 import ink.ikx.rt.impl.mods.jei.impl.core.MCJeiRecipe;
 import mezz.jei.api.ingredients.IIngredients;
@@ -40,6 +42,7 @@ public class DynamicRecipesWrapper implements IRecipeWrapper {
     @Override
     public void getIngredients(IIngredients ingredients) {
         ingredients.setInputLists(VanillaTypes.ITEM, recipe.inputs.stream()
+                .filter(Predicates.not(ILiquidStack.class::isInstance))
                 .map(DynamicRecipesWrapper::getItems)
                 .map(InternalUtils::getItemStacks)
                 .collect(Collectors.toList()));
@@ -52,6 +55,7 @@ public class DynamicRecipesWrapper implements IRecipeWrapper {
         if (recipe.outputs.isEmpty()) return;
 
         ingredients.setOutputLists(VanillaTypes.ITEM, recipe.outputs.stream()
+                .filter(Predicates.not(ILiquidStack.class::isInstance))
                 .map(DynamicRecipesWrapper::getItems)
                 .map(InternalUtils::getItemStacks)
                 .collect(Collectors.toList()));
